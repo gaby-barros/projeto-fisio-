@@ -10,10 +10,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f7f6;
     color: #0f3d2e;
-    padding-top: 60px; /* espaço para o menu fixo */
+    padding-top: 60px; /* espaço do menu */
 }
 
-/* MENU NO TOPO */
+/* MENU TOPO */
 nav {
     background-color: #0f3d2e;
     position: fixed;
@@ -23,13 +23,12 @@ nav {
     z-index: 1000;
 }
 
-/* LISTA DO MENU */
+/* MENU HORIZONTAL */
 .menu {
     list-style: none;
-    display: flex;
+    display: flex;          /* deixa horizontal */
     align-items: center;
     height: 100%;
-    padding-left: 20px;
 }
 
 /* ITENS */
@@ -41,10 +40,11 @@ nav {
 .menu li a {
     color: #ffffff;
     text-decoration: none;
-    padding: 20px 15px;
+    padding: 20px 18px;
     display: block;
 }
 
+/* HOVER */
 .menu li a:hover {
     background-color: #1f6f54;
 }
@@ -57,9 +57,10 @@ nav {
     top: 60px;
     left: 0;
     background-color: #1f6f54;
-    min-width: 200px;
+    min-width: 180px;
 }
 
+/* LINKS DO SUBMENU */
 .submenu li a {
     padding: 12px 15px;
 }
@@ -67,41 +68,4 @@ nav {
 /* MOSTRAR SUBMENU */
 .dropdown:hover .submenu {
     display: block;
-}
-
-/* CONTEÚDO */
-h1, h2 {
-    text-align: center;
-    margin: 20px 0;
-}
-
-/* FORMULÁRIO */
-form {
-    background-color: #ffffff;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 6px;
-}
-
-/* CAMPOS */
-input, select, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
-
-/* BOTÃO */
-button {
-    background-color: #0f3d2e;
-    color: white;
-    padding: 10px;
-    border: none;
-    width: 100%;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #1f6f54;
 }
