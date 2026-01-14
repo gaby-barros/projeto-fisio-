@@ -7,6 +7,106 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+        <!-- MENU -->
+    <nav>
+        
+        <ul class="menu">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="login.html">Login</a></li>
+
+            <li class="dropdown">
+                <a href="#">Cadastros</a>
+                <ul class="submenu">
+                    <li><a href="clientes.html">Cadastro de Clientes</a></li>
+                    <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+                </ul>
+            </li>
+
+            <li><a href="agendamentos.html">Agendamentos</a></li>
+            <li><a href="checkin.html">Check-in</a></li>
+            <li><a href="areadoprofissional.html">Área do Profissional</a></li>
+            <li><a href="administracao.html">Administração</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTEÚDO -->
+    <main>
+        <h1>Cadastro de Clientes</h1>
+
+        <form>
+            <!-----Dados pessoais -->
+            <fieldset>
+               <legend> Dados Pessoais </legend>
+
+               <label> Nome Completo </label>
+               <input type="text" required>
+            
+               <label> CPF </label>
+               <input type="text" >
+               
+               <label> Data de Nascimento </label>
+               <input type="date">
+
+               <label>Sexo</label>
+               <select>
+                      <option>Selecione</option>
+                       <option>Feminino</option>
+                        <option>Masculino</option>
+                        <option>Outros</option>
+                </select>
+            </fieldset>
+
+
+            <fieldset>
+               <legend> Contato </legend>
+
+               <label> Telefone </label>
+               <input type="tel">
+            
+               <label>E-mail</label>
+               <input type="email" >
+            </fieldset>
+
+            <fieldset>
+               <legend> Endereço </legend>
+
+               <label> CEP </label>
+               <input type="text">
+            
+               <label> Rua </label>
+               <input type="text" >
+               
+               <label> Número </label>
+               <input type="text">
+
+               <label> Cidade </label>
+               <input type="text">
+
+            </fieldset>
+
+        
+            <fieldset>
+               <legend> Informações Clínicas </legend>
+
+               <label> Convênio </label>
+               <input type="text">
+            
+               <label> Numero da Carteirinha </label>
+               <input type="text" >
+               
+               <label> Número de Autorização </label>
+               <input type="text">
+
+               <label> Observações </label>
+               <textarea rows="5"></textarea>
+               
+             </fieldset>
+
+           <button type="submit"> Salvar Cadastro </button>
+
+        </form>
+    </main>
+
     
 </body>
 </html>
