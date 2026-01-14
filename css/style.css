@@ -10,37 +10,35 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f7f6;
     color: #0f3d2e;
-    padding-top: 60px; /* espaço do menu */
 }
 
-/* MENU TOPO */
+/* MENU NO TOPO */
 nav {
     background-color: #0f3d2e;
     position: fixed;
     top: 0;
     width: 100%;
     height: 60px;
-    z-index: 1000;
 }
 
 /* MENU HORIZONTAL */
 .menu {
     list-style: none;
-    display: flex;          /* deixa horizontal */
+    display: flex;              /* ISSO deixa horizontal */
     align-items: center;
     height: 100%;
 }
 
-/* ITENS */
+/* ITENS DO MENU */
 .menu li {
     position: relative;
 }
 
 /* LINKS */
 .menu li a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
-    padding: 20px 18px;
+    padding: 20px 15px;         /* separação horizontal */
     display: block;
 }
 
@@ -60,12 +58,13 @@ nav {
     min-width: 180px;
 }
 
-/* LINKS DO SUBMENU */
-.submenu li a {
-    padding: 12px 15px;
-}
-
 /* MOSTRAR SUBMENU */
 .dropdown:hover .submenu {
     display: block;
+}
+
+/* CONTEÚDO DA PÁGINA */
+main {
+    margin-top: 80px;           /* empurra texto para baixo */
+    padding-left: 20px;         /* texto à esquerda */
 }
