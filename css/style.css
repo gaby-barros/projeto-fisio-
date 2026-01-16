@@ -1,9 +1,8 @@
-/* SEÇÃO QUE SEGURA TUDO */
 .conteudo {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px;
+    padding: 50px;
     gap: 40px;
 }
 
@@ -13,28 +12,29 @@
 }
 
 .texto h1 {
-    font-size: 36px; /* TEXTO MAIOR */
-    margin-bottom: 15px;
+    font-size: 48px; /* TEXTO BEM GRANDE */
+    color: #2E7D32;
+    margin-bottom: 20px;
 }
 
 .texto p {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #333;
 }
 
-/* CONTAINER / IMAGEM À DIREITA */
-.container {
+/* IMAGEM À DIREITA */
+.imagem {
     flex: 1;
     text-align: right;
 }
 
-.container img {
+.imagem img {
     width: 100%;
-    max-width: 500px;
+    max-width: 520px;
     height: auto;
-    border-radius: 12px;
+    border-radius: 15px;
 }
-
 
 
 
