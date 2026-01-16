@@ -1,0 +1,106 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== CORES GERAIS ===== */
+body {
+    background-color: #E8F5E9; /* verde bem claro */
+    color: #2E7D32; /* verde escuro */
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #A5D6A7; /* verde claro */
+    padding: 10px 20px;
+}
+
+/* ===== LOGO ===== */
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+/* ===== MENU ===== */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #2E7D32;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    list-style: none;
+    top: 35px;
+    left: 0;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px;
+    color: #2E7D32;
+}
+
+.submenu li a:hover {
+    background-color: #E8F5E9;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+/* ===== CONTEÚDO ===== */
+.container {
+    padding: 20px;
+}
+
+/* ===== BOTÕES ===== */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2E7D32;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background-color: #A5D6A7;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
