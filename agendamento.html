@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="container">
+  <h1>Agendamento</h1>
+
+  <form class="form-grid">
+    <div>
+      <label>Cliente</label>
+      <input type="text" required>
+    </div>
+
+    <div>
+      <label>Profissional</label>
+      <select required>
+        <option>Selecione</option>
+        <option>Fisioterapeuta 1</option>
+        <option>Fisioterapeuta 2</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Data</label>
+      <input type="date" required>
+    </div>
+
+    <div>
+      <label>Horário</label>
+      <input type="time" required>
+    </div>
+
+    <div class="full">
+      <label>Serviço</label>
+      <input type="text">
+    </div>
+
+    <div class="full">
+      <button type="submit">Agendar</button>
+    </div>
+  </form>
+</main>
+
+</body>
+</html>
