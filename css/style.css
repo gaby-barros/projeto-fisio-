@@ -1,15 +1,40 @@
+/* SEÇÃO QUE SEGURA TUDO */
+.conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 40px;
+}
+
+/* TEXTO À ESQUERDA */
+.texto {
+    flex: 1;
+}
+
+.texto h1 {
+    font-size: 36px; /* TEXTO MAIOR */
+    margin-bottom: 15px;
+}
+
+.texto p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* CONTAINER / IMAGEM À DIREITA */
 .container {
-    padding: 30px;
-    text-align: center;
+    flex: 1;
+    text-align: right;
 }
 
 .container img {
     width: 100%;
-    max-width: 700px;
+    max-width: 500px;
     height: auto;
     border-radius: 12px;
-    margin-top: 20px;
 }
+
 
 
 
