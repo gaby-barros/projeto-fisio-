@@ -23,7 +23,7 @@
 
 /* IMAGEM MENOR À ESQUERDA */
 .container img {
-    width: 380px;      /* IMAGEM MENOR */
+    width: 420px;      /* IMAGEM MENOR */
     height: auto;
     border-radius: 12px;
 }
