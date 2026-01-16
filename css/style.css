@@ -1,4 +1,4 @@
-/* ===== RESET BÁSICO ===== */
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
@@ -9,21 +9,21 @@
 /* ===== CORES GERAIS ===== */
 body {
     background-color: #E8F5E9; /* verde bem claro */
-    color: #2E7D32; /* verde escuro */
+    color: #2E7D32;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== NAVBAR / CABEÇALHO ===== */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #A5D6A7; /* verde claro */
-    padding: 10px 20px;
+    padding: 25px 40px;       /* CABEÇALHO MAIOR */
 }
 
 /* ===== LOGO ===== */
 .logo img {
-    width: 120px;
+    width: 180px;   /* LOGO MAIOR */
     height: auto;
 }
 
@@ -31,16 +31,21 @@ body {
 .menu {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
+}
+
+.menu li {
+    position: relative;
 }
 
 .menu li a {
     text-decoration: none;
     color: #2E7D32;
     font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background 0.3s;
+    font-size: 18px;        /* TEXTO MAIOR */
+    padding: 12px 18px;    /* ÁREA CLICÁVEL MAIOR */
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
 }
 
 .menu li a:hover {
@@ -49,24 +54,23 @@ body {
 }
 
 /* ===== DROPDOWN ===== */
-.dropdown {
-    position: relative;
-}
-
 .submenu {
     display: none;
     position: absolute;
+    top: 55px;
+    left: 0;
     background-color: #ffffff;
     list-style: none;
-    top: 35px;
-    left: 0;
-    min-width: 200px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 220px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    z-index: 1000;
 }
 
 .submenu li a {
     display: block;
-    padding: 10px;
+    padding: 12px 15px;
+    font-size: 16px;
     color: #2E7D32;
 }
 
@@ -80,16 +84,17 @@ body {
 
 /* ===== CONTEÚDO ===== */
 .container {
-    padding: 20px;
+    padding: 30px;
 }
 
 /* ===== BOTÕES ===== */
 button {
     background-color: #4CAF50;
-    color: white;
+    color: #ffffff;
     border: none;
-    padding: 10px 16px;
-    border-radius: 5px;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
@@ -101,6 +106,7 @@ button:hover {
 footer {
     background-color: #A5D6A7;
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 14px;
 }
