@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- MENU (CORRIGIDO) -->
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="login.html">Login</a></li>
+
+            <li class="dropdown">
+                <a href="#">Cadastros</a>
+                <ul class="submenu">
+                    <li><a href="clientes.html">Cadastro de Clientes</a></li>
+                    <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+                </ul>
+            </li>
+
+            <li><a href="agendamentos.html">Agendamentos</a></li>
+            <li><a href="checkin.html">Check-in</a></li>
+            <li><a href="areadoprofissional.html">Área do Profissional</a></li>
+            <li><a href="administracao.html">Administração</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTEÚDO -->
+    <main>
+        <section class="container">
+            <h1>Agendamento</h1>
+
+            <form class="form-grid">
+                <div>
+                    <label>Cliente</label>
+                    <input type="text" required>
+                </div>
+
+                <div>
+                    <label>Profissional</label>
+                    <select required>
+                        <option>Selecione</option>
+                        <option>Fisioterapeuta 1</option>
+                        <option>Fisioterapeuta 2</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Data</label>
+                    <input type="date" required>
+                </div>
+
+                <div>
+                    <label>Horário</label>
+                    <input type="time" required>
+                </div>
+
+                <div class="full">
+                    <label>Serviço</label>
+                    <input type="text">
+                </div>
+
+                <div class="full">
+                    <button type="submit">Agendar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -5,46 +5,303 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLÍNICA FISIO+</title>
     <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* =======================================================
+           1. ESTILOS GERAIS
+           ======================================================= */
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+
+        /* =======================================================
+           2. TELA DE BOAS-VINDAS (INTRO)
+           ======================================================= */
+        #welcome-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 99999;
+            background-color: #e8f5e9; /* Fundo Verde Claro */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease, visibility 1s;
+        }
+
+        /* IMAGEM DA INTRO (PEQUENA - 70px) */
+        .intro-img {
+            width: 70px;          
+            height: 70px;         
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* TEXTO DA INTRO */
+        #welcome-screen h1 {
+            color: #004d40;
+            font-size: 1.8rem; 
+            text-transform: uppercase;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .sumir { opacity: 0; visibility: hidden; }
+
+        /* =======================================================
+           3. MENU (NAVBAR)
+           ======================================================= */
+        .navbar {
+            background-color: #e8f5e9;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #c8e6c9;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            margin: 0; padding: 0;
+        }
+
+        .menu li { position: relative; }
+
+        .menu a {
+            color: #004d40;
+            text-decoration: none;
+            padding: 15px;
+            display: block;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .menu a:hover {
+            background-color: #3e693f;
+            border-radius: 4px;
+        }
+
+        /* Submenu */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            min-width: 220px;
+            list-style: none; padding: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .submenu li { border-bottom: 1px solid #dcedc8; }
+        .dropdown:hover .submenu { display: block; }
+
+        /* =======================================================
+           4. CONTEÚDO PRINCIPAL
+           ======================================================= */
+        .container { 
+            text-align: center; 
+            padding: 40px 20px; 
+        }
+
+        /* --- MUDANÇA AQUI: CLASSE PARA A IMAGEM DE DENTRO DO SITE --- */
+        .imagem-site {
+            max-width: 600px; /* Limita o tamanho para não ficar gigante */
+            width: 100%;      /* Responsivo em celular */
+            height: auto;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra bonita */
+        }
+
+/* --- CARDS LADO A LADO COM IMAGENS QUADRADAS --- */
+        .servicos { padding: 40px 20px; text-align: center; }
+        .grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+
+        .card { 
+            background: #fff; width: 200px; padding: 20px; border-radius: 8px; 
+            text-align: center; border: 1px solid #eee; transition: .3s;
+            border-bottom: 4px solid #004d40; /* Detalhe verde */
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        /* A IMAGEM QUADRADA */
+        .img-icone {
+            width: 80px; height: 80px; /* Quadrado */
+            object-fit: cover; /* Ajusta a imagem sem esticar */
+            border-radius: 10px; /* Cantos levemente arredondados */
+            margin-bottom: 15px;
+            background-color: #eee; /* Cor de fundo se a imagem falhar */
+        }
+
+        .btn { display: inline-block; margin-top: 10px; font-size: 12px; border: 1px solid #004d40; padding: 5px 15px; border-radius: 20px; }
+        .btn:hover { background: #004d40; color: #fff; }
+
+        /* --- RODAPÉ (FOOTER) --- */
+        footer {
+            background-color: #004d40; /* Verde Escuro da Marca */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px; /* Espaço para não grudar no conteúdo */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: center; /* Centraliza tudo */
+            gap: 60px; /* Distância entre o horário e o zap */
+            flex-wrap: wrap; /* Ajusta se a tela for pequena */
+            align-items: center;
+        }
+
+        .footer-item h3 {
+            color: #b2dfdb; /* Um verde bem clarinho para o título */
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .footer-item p {
+            color: #e0f2f1;
+            font-size: 14px;
+        }
+
+        /* Botão do WhatsApp */
+        .btn-zap {
+            background-color: #25D366; /* Verde oficial do WhatsApp */
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .btn-zap:hover { background-color: #128C7E; }
+    </style>
 </head>
 
 <body>
 
+    <div id="welcome-screen">
+        <img src="https://images.unsplash.com/photo-1645005512942-a17817fb7c11?q=80&w=1170&auto=format&fit=crop" 
+             alt="Fisioterapia" 
+             class="intro-img">
+        
+        <h1>BEM-VINDO À FISIO+</h1>
+    </div>
+
     <nav class="navbar">
         <div class="logo">
             <a href="index.html">
-                <img src="imagens/logo-prog-web.png" alt="Logo Clínica Fisio+">
+                <img src="imagens/logo-prog-web.png" alt="FISIO+" style="height: 40px;">
             </a>
         </div>
-       
+        
         <ul class="menu">
             <li><a href="index.html">Início</a></li>
             <li><a href="login.html">Login</a></li>
-
             <li class="dropdown">
-                <a href="#">Cadastros</a>
+                <a href="#">Cadastros ▼</a>
                 <ul class="submenu">
                     <li><a href="clientes.html">Cadastro de Clientes</a></li>
                     <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
                 </ul>
             </li>
-
             <li><a href="agendamentos.html">Agendamentos</a></li>
             <li><a href="checkin.html">Check-in</a></li>
             <li><a href="areadoprofissional.html">Área do Profissional</a></li>
-            <li><a href="administracao.html">Administração</a></li>
-        </ul>
+             <li class="dropdown">
+                <a href="#">Administração ▼</a>
+                <ul class="submenu">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </li>
+        </ul> 
     </nav>
 
-    <!-- CONTEÚDO PRINCIPAL -->
     <section class="container">
-        <h1>Bem-vindo a nossa Clínica Fisio+</h1>
+        <h1 style="color: #004d40;">Bem-vindo a nossa Clínica Fisio+</h1>
         <p>Aqui apostamos na praticidade, tecnologia e segurança</p>
 
-        <!-- IMAGEM COM LINK DA INTERNET -->
-        <img 
-            src="https://media.istockphoto.com/id/655864944/pt/foto/physiotherapist-office-indoors-room-no-people.jpg?s=2048x2048&w=is&k=20&c=4hFK3ee7GMM9-Gms6V2FmV5QZt6IUUlwR2rKHdf-fL4="
-            alt="Imagem de clínica de fisioterapia">
+        <img src="https://media.istockphoto.com/id/655864944/pt/foto/physiotherapist-office-indoors-room-no-people.jpg?s=2048x2048&w=is&k=20&c=4hFK3ee7GMM9-Gms6V2FmV5QZt6IUUlwR2rKHdf-fL4="
+            alt="Imagem de clínica de fisioterapia"
+            class="imagem-site"> 
+            
     </section>
+
+        <section class="servicos">
+        <h2>ESPECIALIDADES</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <img src="https://media.istockphoto.com/id/1502535514/pt/foto/close-up-of-a-womans-foot-with-a-sports-ankle-brace.jpg?s=2048x2048&w=is&k=20&c=1hBswg0v0DprOwFaf1LWngMzn0mxtNJRlZK77QU1Mu0=" class="img-icone">
+                <h3>Traumatologia</h3>
+                <p style="font-size:13px; color:#666">Recuperação acelerada de lesões</p>
+                <a href="#" class="btn">Ver Mais</a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=200&q=80" class="img-icone">
+                <h3>Pilates</h3>
+                <p style="font-size:13px; color:#666">Corpo alongado.</p>
+                <a href="#" class="btn">Ver Mais</a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1645005512968-0c1fe99f0093?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-icone">
+                <h3>Seções Manuais </h3>
+                <p style="font-size:13px; color:#666"> Faça a sua seção.</p>
+                <a href="#" class="btn">Ver Mais</a>
+            </div>
+
+            <div class="card">
+                <img src="https://media.istockphoto.com/id/892834830/pt/foto/senior-woman-exercising-in-clinic.jpg?s=2048x2048&w=is&k=20&c=NY8-xkwhlkdV4ev_ezNOZFO3sbkMV_k9TkpKt1c8600=" class="img-icone">
+                <h3>Geriatria</h3>
+                <p style="font-size:13px; color:#666">Mais atenção.</p>
+                <a href="#" class="btn">Ver Mais</a>
+            </div>
+
+        </div>
+    </section>
+
+<footer>
+        <div class="footer-container">
+            
+            <div class="footer-item">
+                <h3>🕒 Horário de Atendimento</h3>
+                <p>Segunda a Sexta: 07:00 às 20:00</p>
+                <p>Sábado: 08:00 às 12:00</p>
+            </div>
+
+            <div class="footer-item">
+                <h3>📞 Fale Conosco</h3>
+                <p>Agende sua avaliação agora:</p>
+                <a href="" target="_blank" class="btn-zap">
+                    WhatsApp 99999-9999
+                </a>
+            </div>
+
+        </div>
+        
+        <p style="margin-top: 30px; font-size: 12px; opacity: 0.5;">
+            © 2024 Clínica Fisio+ | Todos os direitos reservados.
+        </p>
+    </footer>
+
+
+    <script src="js/dashboard.js"></script>
+
+    <script>
+        window.addEventListener("load", function() {
+            var tela = document.getElementById("welcome-screen");
+            setTimeout(function() {
+                tela.classList.add("sumir");
+            }, 3000); 
+        });
+    </script>
 
 </body>
 </html>

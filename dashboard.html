@@ -1,11 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard | Clínica Fisio+</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
 </head>
+
 <body>
-    
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagens/logo-prog-web.png" alt="Logo Clínica Fisio+">
+            </a>
+        </div>
+
+        <ul class="menu">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="login.html">Login</a></li>
+
+            <li class="dropdown">
+                <a href="#">Cadastros ▼</a>
+                <ul class="submenu">
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="profissionais.html">Profissionais</a></li>
+                </ul>
+            </li>
+
+            <li><a href="agendamentos.html">Agendamentos</a></li>
+            <li><a href="checkin.html">Check-in</a></li>
+            <li><a href="areadoprofissional.html">Área do Profissional</a></li>
+            
+            <li class="dropdown">
+                <a href="#">Administração ▼</a>
+                <ul class="submenu">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="dashboard">
+
+        <div class="dashboard-conteudo">
+
+            <div>
+                <h1>Dashboard - Clínica Fisio+</h1>
+                <p>Visão geral do sistema</p>
+            </div>
+
+            <div>
+
+                <div class="cards">
+                    <div class="card">
+                        <h3>Clientes</h3>
+                        <div class="numero">128</div>
+                        <p>Cadastrados</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Profissionais</h3>
+                        <div class="numero">12</div>
+                        <p>Ativos</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Agendamentos</h3>
+                        <div class="numero">34</div>
+                        <p>Hoje</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Check-ins</h3>
+                        <div class="numero">18</div>
+                        <p>Realizados</p>
+                    </div>
+                </div>
+
+                <div class="atalhos">
+                    <h3>Acessos rápidos</h3>
+                    <a href="clientes.html">Novo Cliente</a>
+                    <a href="agendamentos.html">Novo Agendamento</a>
+                    <a href="checkin.html">Check-in</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
 </body>
 </html>
