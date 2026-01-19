@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* =======================================================
    RESET / PADRÃO
    ======================================================= */
@@ -68,12 +69,49 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
+=======
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.menu li {
-    position: relative;
+body {
+  min-height: 100vh;
+  background: #f0ebf8;
+  color: #202124;
+  display: flex;
+  flex-direction: column;
 }
 
+/* NAVBAR */
+nav {
+  width: 100%;
+  background: #12b380;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  padding: 12px 0;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+>>>>>>> d3820b6c34ee4aee5b661a168b674898410f0b7d
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+<<<<<<< HEAD
 .menu a {
     color: #004d40;
     text-decoration: none;
@@ -418,3 +456,13 @@ table th {
         flex-direction: column;
     }
 }
+=======
+
+/* CONTEÚDO */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+}
+>>>>>>> d3820b6c34ee4aee5b661a168b674898410f0b7d
