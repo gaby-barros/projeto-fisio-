@@ -1,657 +1,420 @@
-/* Reset Básico */
-body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+/* =======================================================
+   RESET / PADRÃO
+   ======================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* =========================================
-   1. ESTILOS DA TELA DE BOAS-VINDAS
-   ========================================= */
+body {
+    font-family: Arial, sans-serif;
+}
 
+/* =======================================================
+   TELA DE BOAS-VINDAS (INTRO)
+   ======================================================= */
 #welcome-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 99999; /* Garante que fique na frente de tudo */
-    
-    background-color: #e8f5e9; /* Fundo Verde Claro */
-    
-    /* Centraliza o conteúdo (Imagem e Texto) */
+    z-index: 99999;
+    background-color: #e8f5e9;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    /* Animação de sumir */
     transition: opacity 1s ease, visibility 1s;
 }
 
-/* --- CONFIGURAÇÃO DA IMAGEM REDONDA --- */
 .intro-img {
-    width: 80px;  /* Largura pequena */
-    height: 80px; /* Altura igual para formar quadrado */
-    
-    border-radius: 50%; /* Transforma o quadrado em círculo */
-    object-fit: cover;  /* Corta a imagem para caber no círculo sem esticar */
-    
-    margin-bottom: 15px; /* Espaço entre imagem e texto */
-    border: none;        /* Remove bordas brancas */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra suave */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* --- CONFIGURAÇÃO DO TEXTO --- */
 #welcome-screen h1 {
-    color: #004d40; /* Verde Escuro */
-    font-size: 24px;
-    font-weight: bold;
+    color: #004d40;
+    font-size: 1.8rem;
     text-transform: uppercase;
-    margin: 0;
-    letter-spacing: 1px;
+    font-weight: bold;
 }
 
-/* Classe que faz sumir */
 .sumir {
     opacity: 0;
     visibility: hidden;
+    display: none;
 }
 
-/* =========================================
-   2. ESTILOS DO SITE (MENU, ETC)
-   ========================================= */
+/* =======================================================
+   NAVBAR / MENU (VISUAL ORIGINAL + CORREÇÃO)
+   ======================================================= */
 .navbar {
-    background-color: white;
-    padding: 15px;
-    border-bottom: 3px solid #004d40;
+    background-color: #aee9c9;
+    padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #c8e6c9;
 }
 
 .menu {
     list-style: none;
+    display: flex;
     margin: 0;
     padding: 0;
-    display: flex;
-}
-
-.menu li { margin-left: 20px; }
-.menu a { text-decoration: none; color: #333; font-weight: bold; }
-.container { padding: 40px; text-align: center; }
-
-/* ===== RESET ===== */
-
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* ===== BODY ===== */
-body {
-    min-height: 100vh;
-    background-color: #E8F5E9;
-    color: #2E7D32;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ===== NAVBAR / MENU (FLEXBOX) ===== */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #A5D6A7;
-    padding: 25px 40px;
-}
-
-/* MENU */
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 25px;
 }
 
 .menu li {
     position: relative;
 }
 
-.menu li a {
+.menu a {
+    color: #004d40;
     text-decoration: none;
-    color: #2E7D32;
+    padding: 15px;
+    display: block;
     font-weight: bold;
-    font-size: 18px;
-    padding: 12px 18px;
-    border-radius: 6px;
-    transition: background 0.3s, color 0.3s;
+    font-size: 16px;
 }
 
-.menu li a:hover {
-    background-color: #4CAF50;
-    color: #ffffff;
+.menu a:hover {
+    background-color: #3e693f;
+    border-radius: 4px;
+    color: #fff;
 }
 
-/* DROPDOWN */
+/* SUBMENU (CORRIGIDO SEM QUEBRAR HOME) */
 .submenu {
     display: none;
     position: absolute;
-    top: 55px;
+    top: 100%;
     left: 0;
-    background-color: #ffffff;
-    list-style: none;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
     min-width: 220px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    border-radius: 5px;
-    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.submenu li a {
-    display: block;
+.submenu li {
+    border-bottom: 1px solid #dcedc8;
+}
+
+.submenu a {
     padding: 12px 15px;
-    font-size: 16px;
-    color: #2E7D32;
-}
-
-.submenu li a:hover {
-    background-color: #E8F5E9;
+    font-size: 14px;
 }
 
 .dropdown:hover .submenu {
     display: block;
 }
 
-/* ===== MAIN (GRID → CENTRALIZA A PÁGINA) ===== */
-main {
-    flex: 1;
-    display: grid;
-    place-items: center;
-}
-
-/* ===== CONTAINER (FLEXBOX → CONTEÚDO CENTRALIZADO) ===== */
+/* =======================================================
+   CONTEÚDO PRINCIPAL (HOME)
+   ======================================================= */
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 60px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-
-    background-color: #E8F5E9;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-/* Garante alinhamento interno correto */
-.container > * {
+.imagem-site {
+    max-width: 300px;
     width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* ===== TÍTULOS ===== */
-.container h1 {
-    font-size: 42px;
-    color: #1B5E20;
+/* =======================================================
+   SERVIÇOS / CARDS
+   ======================================================= */
+.servicos {
+    padding: 40px 20px;
     text-align: center;
 }
 
-/* ===== IMAGEM ===== */
-.container img {
-    width: 430px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    align-self: center;
-}
-
-/* ===== FORMULÁRIO (GRID) ===== */
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.grid {
+    display: flex;
+    justify-content: center;
     gap: 20px;
-    max-width: 700px;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.form-grid div {
+.card {
+    background: #fff;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: .3s;
+    border-bottom: 4px solid #004d40;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.img-icone {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #eee;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    border: 1px solid #004d40;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: #004d40;
+}
+
+.btn:hover {
+    background: #004d40;
+    color: #fff;
+}
+
+/* =======================================================
+   FOOTER
+   ======================================================= */
+footer {
+    background-color: #004d40;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-item h3 {
+    color: #b2dfdb;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.footer-item p {
+    color: #e0f2f1;
+    font-size: 14px;
+}
+
+.btn-zap {
+    background-color: #25D366;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-zap:hover {
+    background-color: #128C7E;
+}
+
+/* =======================================================
+   FORMULÁRIOS (SOMENTE PÁGINAS DE CADASTRO)
+   ======================================================= */
+main {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 40px 16px;
 }
 
-.form-grid label {
-    font-weight: bold;
-    margin-bottom: 5px;
+main h1 {
+    margin-bottom: 24px;
+    color: #004d40;
 }
 
-.form-grid input,
-.form-grid select {
+main form {
+    width: 100%;
+    max-width: 520px;
+    background: #fff;
+    padding: 32px 28px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+main form fieldset {
+    border: none;
+    margin-bottom: 24px;
+    padding: 0;
+}
+
+main form legend {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1b4332;
+    margin-bottom: 12px;
+}
+
+main form label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+main form input,
+main form select,
+main form textarea {
+    width: 100%;
     padding: 12px;
+    border: 1px solid #dadce0;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    margin-bottom: 16px;
+    font-size: 14px;
+    transition: .2s;
 }
 
-.form-grid .full {
-    grid-column: span 2;
+main form input:focus,
+main form select:focus,
+main form textarea:focus {
+    outline: none;
+    border-color: #52b788;
+    box-shadow: 0 0 0 2px rgba(82,183,136,.2);
 }
 
-/* ===== TABELA (CHECK-IN) ===== */
+main form button,
+main form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #52b788;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main form button:hover,
+main form input[type="submit"]:hover {
+    background: #40916c;
+}
+
+
+/* GARANTE MENU ALINHADO IGUAL À HOME EM TODAS AS PÁGINAS */
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    max-width: 1200px;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+
+/* LOGO DO MENU */
+.navbar .logo img {
+    height: 60px;      /* tamanho da logo */
+    width: auto;       /* mantém proporção */
+}
+
+
 table {
     width: 100%;
     max-width: 900px;
     border-collapse: collapse;
-    margin: 0 auto;
-}
-
-th, td {
-    border: 1px solid #ccc;
-    padding: 12px;
-    text-align: center;
-}
-
-th {
-    background-color: #A5D6A7;
-    color: #1B5E20;
-}
-
-.pendente {
-    color: #e65100;
-    font-weight: bold;
-}
-
-.feito {
-    color: #2E7D32;
-    font-weight: bold;
-}
-
-/* ===== BOTÕES ===== */
-button,
-.checkin-btn {
-    background-color: #4CAF50;
-    color: #ffffff;
-    border: none;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-button:hover,
-.checkin-btn:hover {
-    background-color: #2E7D32;
-}
-
-/* ===== RODAPÉ ===== */
-footer {
-    background-color: #A5D6A7;
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-}
-
-/* ===== RESPONSIVO ===== */
-@media (max-width: 768px) {
-    .container {
-        padding: 30px;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .form-grid .full {
-        grid-column: span 1;
-    }
-
-    .menu {
-        gap: 15px;
-    }
-}
-
-
-/* 1. Ajuste do MAIN para centralizar o cartão */
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: flex-start; /* Alinha no topo com margem */
-    padding: 40px 20px;
-    background-color: #E8F5E9; /* Fundo verde claro */
-}
-
-/* 2. O Formulário vira o "Cartão Branco" */
-form {
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 450px; /* <--- LARGURA DEFINIDA AQUI */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.2); /* Sombra estilo Google */
-    border-top: 12px solid #2E7D32; /* Faixa colorida no topo (Verde da sua marca) */
-    display: flex;
-    flex-direction: column;
-}
-
-/* Título dentro do formulário (se houver h1 dentro do main antes do form, movemos visualmente) */
-main h1 {
-    font-size: 28px;
-    color: #202124;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #dadce0;
-    text-align: left; /* Google Forms alinha à esquerda */
-    width: 100%;
-    max-width: 450px;
     background: #fff;
-    padding: 20px;
-    border-radius: 8px 8px 0 0;
-    margin-bottom: 0;
-    /* Ajuste para ficar junto do form se estiver fora */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    margin-block: 40px; /* afasta em cima e embaixo da tabela */
 }
 
-/* 3. Fieldsets (As sessões de dados) */
-fieldset {
-    border: none;
-    margin-bottom: 25px;
-    padding: 0;
+table th, table td {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 14px;
+    border: 1px solid #eee;
 }
 
-legend {
-    font-size: 18px;
-    color: #202124;
-    margin-bottom: 15px;
-    padding-top: 10px;
-}
-
-/* 4. Inputs estilo Google (Linha embaixo) */
-/* Sobrescrevemos o estilo .form-grid input antigo */
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form input[type="date"],
-form select {
-    width: 100%;
-    border: none !important; /* Remove borda quadrada */
-    border-bottom: 1px solid #dadce0 !important; /* Apenas linha embaixo */
-    background-color: transparent;
-    border-radius: 0 !important;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #202124;
-    outline: none;
-    transition: 0.3s;
-    margin-bottom: 15px;
-}
-
-/* Efeito de Foco (Linha fica verde grossa) */
-form input:focus,
-form select:focus,
-form textarea:focus {
-    border-bottom: 2px solid #2E7D32 !important;
-    background-color: #f5f5f5; /* Leve cinza ao focar */
-}
-
-/* Labels */
-form label {
-    font-size: 13px;
-    color: #5f6368;
+table th {
+    background: #e8f5e9;
+    color: #004d40;
     font-weight: 600;
-    margin-top: 10px;
-    display: block;
-}
-
-/* Textarea */
-form textarea {
-    width: 100%;
-    border: 1px solid #dadce0;
-    border-radius: 4px;
-    padding: 10px;
-    margin-top: 5px;
-    resize: vertical;
-    font-size: 15px;
-}
-
-/* 5. Botão de Salvar */
-form button[type="submit"] {
-    background-color: #2E7D32; /* Verde Escuro */
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    align-self: flex-end; /* Joga o botão para a direita */
-    margin-top: 10px;
-    width: auto; /* Botão não ocupa a tela toda */
-}
-
-form button[type="submit"]:hover {
-    background-color: #1B5E20;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 
 
-.dashboard {
-    padding: 30px;
-    background: #fdfefe;
-}
-
-/* estrutura em 2 colunas */
-.dashboard-conteudo {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-}
-
-/* cards */
-.cards {
-    display: grid;
+/* ===== Login e Registro simples e verde ===== */
+.log-register-section {
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    margin: 50px auto;
     gap: 20px;
 }
 
-.card {
-    background: #efedef;
+.log-register-section .log-in,
+.log-register-section .register {
+    flex: 1;
     padding: 20px;
-    border-radius: 10px;
+    background: #e8f5e9;       /* fundo verde claro */
+    border: 1px solid #004d40; /* borda verde escuro */
+}
+
+.log-register-section h2 {
     text-align: center;
-    box-shadow: 0 2px 6px rgba(244, 242, 243, 0.842);
+    color: #004d40;
+    margin-bottom: 15px;
 }
 
-.card .numero {
-    font-size: 32px;
-    font-weight: bold;
-    color: #9fdbb5;
+.log-register-section label {
+    display: block;
+    margin-top: 10px;
+    color: #004d40;
 }
 
-/* acessos rápidos */
-.atalhos a {
-    display: inline-block;
-    margin: 8px 5px 0 0;
-    padding: 10px 15px;
-    background: #2a7ae4;
-    color: #e9eff3;
-    text-decoration: none;
-    border-radius: 5px;
+.log-register-section input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #004d40;
 }
 
+.log-register-section button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #004d40;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
 
-/* =======================================================
-           1. ESTILOS GERAIS
-           ======================================================= */
-        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
-
-        /* =======================================================
-           2. TELA DE BOAS-VINDAS (INTRO)
-           ======================================================= */
-        #welcome-screen {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 99999;
-            background-color: #e8f5e9; /* Fundo Verde Claro */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 1s ease, visibility 1s;
-        }
-
-        /* IMAGEM DA INTRO (PEQUENA - 70px) */
-        .intro-img {
-            width: 70px;          
-            height: 70px;         
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        /* TEXTO DA INTRO */
-        #welcome-screen h1 {
-            color: #004d40;
-            font-size: 1.8rem; 
-            text-transform: uppercase;
-            margin: 0;
-            font-weight: bold;
-        }
-
-        .sumir { opacity: 0; visibility: hidden; }
-
-        /* =======================================================
-           3. MENU (NAVBAR)
-           ======================================================= */
-        .navbar {
-            background-color: #e8f5e9;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid #c8e6c9;
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            margin: 0; padding: 0;
-        }
-
-        .menu li { position: relative; }
-
-        .menu a {
-            color: #004d40;
-            text-decoration: none;
-            padding: 15px;
-            display: block;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .menu a:hover {
-            background-color: #3e693f;
-            border-radius: 4px;
-        }
-
-        /* Submenu */
-        .submenu {
-            display: none;
-            position: absolute;
-            top: 100%; left: 0;
-            background-color: #e8f5e9;
-            border: 1px solid #c8e6c9;
-            min-width: 220px;
-            list-style: none; padding: 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .submenu li { border-bottom: 1px solid #dcedc8; }
-        .dropdown:hover .submenu { display: block; }
-
-        /* =======================================================
-           4. CONTEÚDO PRINCIPAL
-           ======================================================= */
-        .container { 
-            text-align: center; 
-            padding: 40px 20px; 
-        }
-
-        /* --- MUDANÇA AQUI: CLASSE PARA A IMAGEM DE DENTRO DO SITE --- */
-        .imagem-site {
-            max-width: 600px; /* Limita o tamanho para não ficar gigante */
-            width: 100%;      /* Responsivo em celular */
-            height: auto;
-            border-radius: 15px;
-            margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra bonita */
-        }
-
-/* --- CARDS LADO A LADO COM IMAGENS QUADRADAS --- */
-        .servicos { padding: 40px 20px; text-align: center; }
-        .grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-
-        .card { 
-            background: #fff; width: 200px; padding: 20px; border-radius: 8px; 
-            text-align: center; border: 1px solid #eee; transition: .3s;
-            border-bottom: 4px solid #004d40; /* Detalhe verde */
-        }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-        /* A IMAGEM QUADRADA */
-        .img-icone {
-            width: 80px; height: 80px; /* Quadrado */
-            object-fit: cover; /* Ajusta a imagem sem esticar */
-            border-radius: 10px; /* Cantos levemente arredondados */
-            margin-bottom: 15px;
-            background-color: #eee; /* Cor de fundo se a imagem falhar */
-        }
-
-        .btn { display: inline-block; margin-top: 10px; font-size: 12px; border: 1px solid #004d40; padding: 5px 15px; border-radius: 20px; }
-        .btn:hover { background: #004d40; color: #fff; }
-
-        /* --- RODAPÉ (FOOTER) --- */
-        footer {
-            background-color: #004d40; /* Verde Escuro da Marca */
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 50px; /* Espaço para não grudar no conteúdo */
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: center; /* Centraliza tudo */
-            gap: 60px; /* Distância entre o horário e o zap */
-            flex-wrap: wrap; /* Ajusta se a tela for pequena */
-            align-items: center;
-        }
-
-        .footer-item h3 {
-            color: #b2dfdb; /* Um verde bem clarinho para o título */
-            font-size: 16px;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-
-        .footer-item p {
-            color: #e0f2f1;
-            font-size: 14px;
-        }
-
-        /* Botão do WhatsApp */
-        .btn-zap {
-            background-color: #25D366; /* Verde oficial do WhatsApp */
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 5px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .btn-zap:hover { background-color: #128C7E; }
-
-        body { font-family: Arial; background:#f4f6f8; }
-.cards { display:flex; gap:10px; }
-.card { background:#fff; padding:15px; border-radius:5px; }
+/* Responsividade: empilha em telas pequenas */
+@media (max-width: 700px) {
+    .log-register-section {
+        flex-direction: column;
+    }
+}

@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Clientes</title>
     <link rel="stylesheet" href="css/style.css">
+  
+  
+
 </head>
+ 
 <body>
         <!-- MENU -->
-    <nav>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagens/logo.png">
+            </a>
+        </div>
         
         <ul class="menu">
             <li><a href="index.html">Início</a></li>
             <li><a href="login.html">Login</a></li>
-
             <li class="dropdown">
                 <a href="#">Cadastros</a>
                 <ul class="submenu">
@@ -21,12 +29,17 @@
                     <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
                 </ul>
             </li>
-
             <li><a href="agendamentos.html">Agendamentos</a></li>
             <li><a href="checkin.html">Check-in</a></li>
             <li><a href="areadoprofissional.html">Área do Profissional</a></li>
-            <li><a href="administracao.html">Administração</a></li>
-        </ul>
+             <li class="dropdown">
+                <a href="#">Administração ▼</a>
+                <ul class="submenu">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="cepcadastrados"> Clientes e ProfissionaisCadastrados</a></li>
+                </ul>
+            </li>
+        </ul> 
     </nav>
 
     <!-- CONTEÚDO -->
@@ -105,6 +118,13 @@
            <button type="submit"> Salvar Cadastro </button>
 
         </form>
+
+       <a href="cepcadastrados.html" class="btn" style="margin-top:20px;">
+        Ver Clientes e Profissionais Cadastrados
+    </a>
+
+
+
     </main>
 
     
