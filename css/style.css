@@ -345,7 +345,7 @@ table {
     max-width: 900px;
     border-collapse: collapse;
     background: #fff;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(43, 167, 39, 0.08);
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid #ddd;
@@ -414,3 +414,29 @@ table th {
 }
 
 
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #2ecc71; /* verde */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 60px;
+    padding: 10px 16px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background-color: #27ae60;
+}
