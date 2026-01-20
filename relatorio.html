@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>relatorio</title>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="container">
+
+  <!-- CABEÇALHO -->
+  <header class="header">
+    <div class="logo">FISIO+</div>
+    <div>
+      <h1>Relatório do Paciente</h1>
+      <p id="data-emissao"></p>
+    </div>
+  </header>
+
+  <!-- DADOS -->
+  <section class="box">
+    <h2>Dados do Paciente</h2>
+    <div class="info-grid">
+      <p><strong>Nome:</strong> Maria Silva</p>
+      <p><strong>Idade:</strong> 35 anos</p>
+      <p><strong>Profissional:</strong> João Pereira</p>
+      <p><strong>Plano:</strong> Particular</p>
+    </div>
+  </section>
+
+  <!-- FILTRO -->
+  <section class="filtro">
+    <div>
+      <label>Data Inicial</label>
+      <input type="date" id="dataInicio">
+    </div>
+
+    <div>
+      <label>Data Final</label>
+      <input type="date" id="dataFim">
+    </div>
+
+    <button onclick="filtrar()">Filtrar</button>
+  </section>
+
+  <!-- CARDS -->
+  <section class="cards">
+    <div class="card">Agendadas<br><span id="agendadas">2</span></div>
+    <div class="card">Realizadas<br><span id="realizadas">1</span></div>
+    <div class="card">Faltas<br><span id="faltas">1</span></div>
+  </section>
+
+  <!-- TABELA -->
+  <section class="box">
+    <h2>Histórico</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Horário</th>
+          <th>Status</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+
+      <tbody id="tabela">
+        <tr>
+          <td>2026-01-10</td>
+          <td>08:00</td>
+          <td class="feito">Realizado</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>2026-01-12</td>
+          <td>09:00</td>
+          <td class="pendente">Pendente</td>
+          <td>
+            <button onclick="marcar(this, 'Realizado')">Realizar</button>
+            <button onclick="marcar(this, 'Falta')">Falta</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- OBSERVAÇÃO -->
+  <section class="box">
+    <h2>Evolução</h2>
+    <textarea placeholder="Digite observações do atendimento..."></textarea>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <button onclick="window.print()">Imprimir Relatório</button>
+  </footer>
+
+</main>
+
+<script src="relatorio-paciente.js"></script>
+</body>
+</html>
+    
+</body>
+</html>
