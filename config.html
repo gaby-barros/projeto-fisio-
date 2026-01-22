@@ -83,6 +83,13 @@ button {
     border-width: 1px;
 }
 
+.page-title img {
+    height: 30px;   
+    width: auto;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
 .profile-section img {
     height: 30px;   
     width: auto;
@@ -169,13 +176,17 @@ button {
                 <a href="#">Administração ▼</a>
                 <ul class="submenu">
                     <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="cepcadastrados"> Clientes e Profissionais Cadastrados</a></li>
+                    <li><a href="cepcadastrados.html"> Clientes e Profissionais Cadastrados</a></li>
 
                 </ul>
             </li>
         </ul> 
     </nav>
-    <h2>Configurações do site</h2>
+
+    <h2 class="page-title">
+        <img src="imagens/settings.png">
+        Configurações do site
+    </h2>
     
     <h4 class="profile-section">
         <img src="/imagens/profile.png">
@@ -190,22 +201,22 @@ button {
             <div class="profile-name">
                 <label for="name">Nome</label>
                 <input type="text" class="name" value="Alisson Ferreira Sá e Silva">
-                <button type="submit">Alterar Nome</button>
+                <button type="submit" onclick="alert('Como esse é um site estático, não é possível alterar o nome.')">Alterar Nome</button>
             </div>
             <div class="profile-email">
                 <label for="e-mail">E-Mail</label>
                 <input type="email" class="e-mail" value="alissonferreira@outlook.com">
-                <button type="submit">Alterar E-Mail</button>
+                <button type="submit" onclick="alert('Como esse é um site estático, não é possível alterar o E-Mail.')">Alterar E-Mail</button>
             </div>
             <div class="profile-CPF">
                 <label for="CPF">CPF</label>
                 <input type="text" class="CPF" value="774.902.694-07">
-                <button type="submit">Alterar CPF</button>
+                <button type="submit" onclick="alert('Como esse é um site estático, não é possível alterar o CPF.')">Alterar CPF</button>
             </div>
             <div class="profile-telephone">
                 <label for="telephone">Número de Telefone</label>
                 <input type="number" class="telephone" value="87979113461">
-                <button type="submit">Alterar Número de Telefone</button>
+                <button type="submit" onclick="alert('Como esse é um site estático, não é possível alterar o número de telefone.')">Alterar Número de Telefone</button>
             </div>
         </div>
     </div>
@@ -237,10 +248,9 @@ button {
         <div class="acccount-password">
             <label for="password">Senha</label>
             <input type="password" class="password" value="ALS@97">
-            <button type="submit">Alterar senha</button>
+            <button type="submit" onclick="alert('Como esse é um site estático, não é possível alterar a senha.')">Alterar senha</button>
         </div>
         <button type="submit" onclick="alert('A partir das próximas 24h, você irá receber uma notificação de confirmação no seu meio de comunicação configurado.')">Excluir conta</button>
-        
     </div>
 
 </body>
