@@ -77,6 +77,12 @@
 }
 
 
+button {
+    background-color: rgb(0, 96, 69);
+    color: white;
+    border-width: 1px;
+}
+
 .profile-section img {
     height: 30px;   
     width: auto;
@@ -93,11 +99,6 @@
     flex-direction: column;
     align-items:flex-start;
     gap: 10px;
-}
-.profile-pic button {
-    background-color: #004d40;
-    color: white;
-    border-width: 1px;
 }
 
 .profile {
@@ -125,6 +126,19 @@
     gap: 10px;
 }
 
+.account-security-section img {
+    height: 30px;   
+    width: auto;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+.account-security {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
 
 
 
@@ -162,6 +176,7 @@
         </ul> 
     </nav>
     <h2>Configurações do site</h2>
+    
     <h4 class="profile-section">
         <img src="/imagens/profile.png">
         Perfil
@@ -194,25 +209,39 @@
             </div>
         </div>
     </div>
+
     <h4 class="notifications-section">
         <img src="/imagens/notification.png">
         Notificações
     </h4>
     <div class="notifications">
         <div class="email-notification">
-            <input type="radio" class="yes-email">
+            <input type="radio" class="yes-email" name="email-pref" value="yes">
             <label for="yes-email">Eu quero receber notificações por E-Mail</label>
-            <input type="radio" class="no-email">
+            <input type="radio" class="no-email" name="email-pref" value="no">
             <label for="yes-email">Não quero receber notificações por E-Mail</label>
         </div>
         <div class="telephone-notification">
-            <input type="radio" class="yes-telephone">
-            <label for="yes-email">Eu quero receber notificações por SMS</label>
-            <input type="radio" class="no-telephone">
-            <label for="yes-email">Não quero receber notificações por SMS</label>
+            <input type="radio" class="yes-telephone" name="telephone-pref" value="yes">
+            <label for="yes-telephone">Eu quero receber notificações por SMS</label>
+            <input type="radio" class="no-telephone" name="telephone-pref" value="no">
+            <label for="no-telephone">Não quero receber notificações por SMS</label>
         </div>
     </div>
 
+    <h4 class="account-security-section">
+        <img src="imagens/security.png">
+        Segurança da Conta
+    </h4>
+    <div class="account-security">
+        <div class="acccount-password">
+            <label for="password">Senha</label>
+            <input type="password" class="password" value="ALS@97">
+            <button type="submit">Alterar senha</button>
+        </div>
+        <button type="submit" onclick="alert('A partir das próximas 24h, você irá receber uma notificação de confirmação no seu meio de comunicação configurado.')">Excluir conta</button>
+        
+    </div>
 
 </body>
 </html>
