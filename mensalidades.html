@@ -1,98 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Mensalidades dos Profissionais</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mensalidades e Pagamentos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="imagens/logo.png" alt="FISIO+" style="height: 40px" />
+        </a>
+      </div>
 
-        <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="imagens/logo.png" alt="FISIO+" style="height: 40px;">
-            </a>
-        </div>
-        
-        <ul class="menu">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li class="dropdown">
-                <a href="#">Cadastros </a>
-                <ul class="submenu">
-                    <li><a href="clientes.html">Cadastro de Clientes</a></li>
-                    <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
-                </ul>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li class="dropdown">
+          <a href="#">Cadastros </a>
+          <ul class="submenu">
+            <li><a href="clientes.html">Cadastro de Clientes</a></li>
+            <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+          </ul>
+        </li>
+        <li><a href="agendamentos.html">Agendamentos</a></li>
+        <li><a href="checkin.html">Check-in</a></li>
+        <a href="#">Area do Profissional </a>
+        <ul class="submenu">
+          <li><a href="relatorio.html"> Relatorios </a></li>
+        </ul>
+        <li class="dropdown">
+          <a href="#">Administração </a>
+          <ul class="submenu">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li>
+              <a href="cepcadastrados.html">
+                Clientes e Profissionais Cadastrados</a
+              >
             </li>
-            <li><a href="agendamentos.html">Agendamentos</a></li>
-            <li><a href="checkin.html">Check-in</a></li>
-              <a href="#">Area do Profissional </a>
-                <ul class="submenu">
-                    <li><a href="relatorio.html"> Relatorios </a></li>
-                </ul>
-             <li class="dropdown">
-                <a href="#">Administração </a>
-                <ul class="submenu">
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="cepcadastrados.html"> Clientes e Profissionais Cadastrados</a></li>
-                    <li><a href="mensalidades.html"> Mensalidades</a></li>
-                    
-                </ul>
-            </li>
-        </ul> 
+            <li><a href="mensalidades.html"> Mensalidades</a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
 
+    <header>
+      <h1>Mensalidades e Pagamentos</h1>
+    </header>
 
-
-<header>
-    
-    <h1>Mensalidades dos Profissionais</h1>
-
-</header>
-
-<main>
-
-    <section class="mensalidades-profissionais">
-        <h2>Pagamento Mensal</h2>
+    <main>
+      <section class="mensalidades-clientes">
+        <h2>Mensalidade dos Clientes</h2>
 
         <table>
-            <thead>
-                <tr>
-                    <th>Profissional</th>
-                    <th>Especialidade</th>
-                    <th>Atendimentos no Mês</th>
-                    <th>Valor por Atendimento</th>
-                    <th>Total Mensal a Receber</th>
-                    <th>Data de Pagamento</th>
-                </tr>
-            </thead>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Serviço</th>
+              <th>Valor Mensal</th>
+              <th>Forma de Pagamento</th>
+              <th>Data de Vencimento</th>
+              <th>Status</th>
+            </tr>
+          </thead>
 
-            <tbody>
-                <tr>
-                    <td data-label="Profissional">Ana Costa</td>
-                    <td data-label="Especialidade">Pilates</td>
-                    <td data-label="Atendimentos">20</td>
-                    <td data-label="Valor">R$ 80,00</td>
-                    <td data-label="Total">R$ 1.600,00</td>
-                    <td data-label="Pagamento">30/01/2026</td>
-                </tr>
+          <tbody>
+            <tr>
+              <td data-label="Cliente">Maria Silva</td>
+              <td data-label="Serviço">Pilates</td>
+              <td data-label="Valor">R$ 200,00</td>
+              <td data-label="Pagamento">Cartão</td>
+              <td data-label="Vencimento">10/02/2026</td>
+              <td data-label="Status">Pago</td>
+            </tr>
 
-                <tr>
-                    <td data-label="Profissional">Lucas Rocha</td>
-                    <td data-label="Especialidade">Traumatologia</td>
-                    <td data-label="Atendimentos">15</td>
-                    <td data-label="Valor">R$ 100,00</td>
-                    <td data-label="Total">R$ 1.500,00</td>
-                    <td data-label="Pagamento">30/01/2026</td>
-                </tr>
-
-            </tbody>
+            <tr>
+              <td data-label="Cliente">João Pereira</td>
+              <td data-label="Serviço">Fisioterapia</td>
+              <td data-label="Valor">R$ 180,00</td>
+              <td data-label="Pagamento">Pix</td>
+              <td data-label="Vencimento">10/02/2026</td>
+              <td data-label="Status">Pendente</td>
+            </tr>
+          </tbody>
         </table>
-    </section>
+      </section>
 
-</main>
+      <section class="mensalidades-profissionais">
+        <h2>Pagamento dos Profissionais</h2>
 
-</body>
+        <table>
+          <thead>
+            <tr>
+              <th>Profissional</th>
+              <th>Especialidade</th>
+              <th>Atendimentos no Mês</th>
+              <th>Valor por Atendimento</th>
+              <th>Total Mensal a Receber</th>
+              <th>Data de Pagamento</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td data-label="Profissional">Ana Costa</td>
+              <td data-label="Especialidade">Pilates</td>
+              <td data-label="Atendimentos">20</td>
+              <td data-label="Valor">R$ 80,00</td>
+              <td data-label="Total">R$ 1.600,00</td>
+              <td data-label="Pagamento">30/01/2026</td>
+            </tr>
+
+            <tr>
+              <td data-label="Profissional">Lucas Rocha</td>
+              <td data-label="Especialidade">Traumatologia</td>
+              <td data-label="Atendimentos">15</td>
+              <td data-label="Valor">R$ 100,00</td>
+              <td data-label="Total">R$ 1.500,00</td>
+              <td data-label="Pagamento">30/01/2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
 </html>
