@@ -9,6 +9,26 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+
+button {
+    background-color: rgb(0, 96, 69);
+    color: white;
+    border-width: 1px;
+}
+
+fieldset {
+    border-color:#004d40;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #e9ebe6;
+}
+
+legend {
+    font-weight: bold;
+}
+
+
+
 .navbar {
     background-color: #aee9c9;
     padding: 10px 20px;
@@ -95,6 +115,56 @@
     flex-direction: row;
 }
 
+.pacient-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.symthoms-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.medications {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.vicious-habits {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.doctor-opinion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.doctor-recomendation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.extra-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-area {
+    gap:10px;
+}
+
+
+
+
+
 
 
     </style>
@@ -136,25 +206,66 @@
     </h2>
 
     <div class="prontuario-section">
-        <form>
-            <fieldset>
-                <legend>Seção 1 - Identificação do Paciente</legend>
-                <div class="pacient-identification">
-                    <label for="pacient-name">Nome</label>
-                    <input type="text" id="pacient-name">
-                    <label for="pacient-birthdate">Data de Nascimento</label>
-                    <input type="date" id="pacient-birthdate">
-                    <div class="pacient-identification-gender">
-                        <label for="gender-male">Masculino</label>
-                        <input type="radio" id="gender-male" name="gender">
-                        <label for="gender-female">Feminino</label>
-                        <input type="radio" id="gender-female" name="gender">
+        <div class="form-area">
+            <form>
+                <fieldset>
+                    <legend>Seção 1 - Identificação do Paciente</legend>
+                    <div class="pacient-identification">
+                        <label for="pacient-name">Nome</label>
+                        <input type="text" id="pacient-name">
+                        <label for="pacient-birthdate">Data de Nascimento</label>
+                        <input type="date" id="pacient-birthdate">
+                        <div class="pacient-identification-gender">
+                            <label for="gender-male">Masculino</label>
+                            <input type="radio" id="gender-male" name="gender">
+                            <label for="gender-female">Feminino</label>
+                            <input type="radio" id="gender-female" name="gender">
+                        </div>
+                        <label for="telephone">Número de Telefone</label>
+                        <input type="number" id="telephone">
+                        <label for="CPF">CPF</label>
+                        <input type="number" id="CPF">
                     </div>
-                    <label for="telephone">Número de Telefone</label>
-                    <input type="number" id="telephone">
-                </div>
-            </fieldset>
-        </form>
+                </fieldset>
+                <fieldset>
+                    <legend>Seção 2 - Anamnese</legend>
+                    <div class="pacient-description">
+                        <label for="description">O que o paciente está sentindo?</label>
+                        <textarea id="description" rows="6" cols="45"></textarea>
+                    </div>
+                    <div class="symthoms-start">
+                        <label for="symthoms-start-date">Quando começou os sintomas?</label>
+                        <textarea id="symthoms-start-date" rows="6" cols="45"></textarea>
+                    </div>
+                    <div class="medications">
+                        <label for="medications-usage">Quais medicamentos o paciente usa?</label>
+                        <textarea id="medications-usage" rows="4" cols="35"></textarea>
+                    </div>
+                    <div class="vicious-habits">
+                        <label for="cigarret-habit">O paciente fuma?</label>
+                        <input type="checkbox" id="cigarret-habit">
+                        <label for="alcohol-habit">O paciente consome bebidas alcólicas frequentemente?</label>
+                        <input type="checkbox" id="alcohol-habit">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Seção 3 - Conclusão Médica</legend>
+                    <div class="doctor-opinion">
+                        <label for="opinion">Qual a opinião médica quanto a situação do paciente?</label>
+                        <textarea id="opinion" rows="5" cols="45"></textarea>
+                    </div>
+                    <div class="doctor-recomendation">
+                        <label for="recomendation">O que é recomendado pelo médico ao paciente?</label>
+                        <textarea id="recomendation" rows="5" cols="45"></textarea>
+                    </div>
+                    <div class="extra-info">
+                        <label for="info">Há algum detalhe a mais que necessita-se abordar?</label>
+                        <textarea id="info" rows="5" cols="45"></textarea>
+                    </div>
+                </fieldset>
+                <button type="submit" onclick="alert('O prontuário do paciente foi cadastrado.')">Cadastrar prontuário</button>
+            </form>
+        </div>
     </div>
 
 
