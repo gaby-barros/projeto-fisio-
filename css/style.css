@@ -1,6 +1,4 @@
-/* =======================================================
-   RESET / PADRÃO
-   ======================================================= */
+/* ================= RESET / BASE ================= */
 * {
   margin: 0;
   padding: 0;
@@ -11,14 +9,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* ---------Tela de Boas Vindas com a INTRO--------------*/
-
+/* ================= INTRO / BOAS-VINDAS ================= */
 #welcome-screen {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 99999;
   background-color: #e8f5e9;
   display: flex;
@@ -26,7 +20,8 @@ body {
   justify-content: center;
   align-items: center;
   transition:
-  
+    opacity 1s ease,
+    visibility 1s;
 }
 
 .intro-img {
@@ -50,7 +45,7 @@ body {
   visibility: hidden;
 }
 
-/* O menu do site e o NAVBAR*/
+/* ================= NAVBAR / MENU ================= */
 .navbar {
   background-color: #aee9c9;
   padding: 10px 20px;
@@ -60,11 +55,25 @@ body {
   border-bottom: 2px solid #c8e6c9;
 }
 
+.navbar .logo img {
+  height: 60px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
 .menu {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: flex-end;
+  padding-right: 20px;
 }
 
 .menu li {
@@ -86,7 +95,7 @@ body {
   color: #fff;
 }
 
-/* ---------------OS SUBMENUS----------------------*/
+/* ================= SUBMENU ================= */
 .submenu {
   display: none;
   position: absolute;
@@ -96,9 +105,8 @@ body {
   border: 1px solid #c8e6c9;
   min-width: 220px;
   list-style: none;
-  padding: 0;
-  z-index: 999;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 
 .submenu li {
@@ -114,7 +122,7 @@ body {
   display: block;
 }
 
-/* CUIDA DO CONTEUDO PRINCIPAL DO SITE */
+/* ================= CONTEÚDO PRINCIPAL ================= */
 .container {
   text-align: center;
   padding: 40px 20px;
@@ -123,13 +131,12 @@ body {
 .imagem-site {
   max-width: 300px;
   width: 100%;
-  height: auto;
   border-radius: 15px;
   margin-top: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* AREA DE SERVIÇOS COM OS CARDS*/
+/* ================= SERVIÇOS / CARDS ================= */
 .servicos {
   padding: 40px 20px;
   text-align: center;
@@ -150,8 +157,8 @@ body {
   border-radius: 8px;
   text-align: center;
   border: 1px solid #eee;
-  transition: 0.3s;
   border-bottom: 4px solid #004d40;
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -168,22 +175,26 @@ body {
   background-color: #eee;
 }
 
+/* ================= BOTÕES ================= */
 .btn {
   display: inline-block;
   margin-top: 10px;
+  margin-bottom: 60px;
+  padding: 10px 16px;
+  background-color: #2ecc71;
+  color: #fff;
   font-size: 12px;
+  font-weight: bold;
   border: 1px solid #004d40;
-  padding: 5px 15px;
-  border-radius: 20px;
-  color: #004d40;
+  border-radius: 6px;
+  text-decoration: none;
 }
 
 .btn:hover {
-  background: #004d40;
-  color: #fff;
+  background-color: #27ae60;
 }
 
-/* CUIDA DOS FORMULARIOS */
+/* ================= FORMULÁRIOS ================= */
 main {
   display: flex;
   flex-direction: column;
@@ -208,7 +219,6 @@ main form {
 main form fieldset {
   border: none;
   margin-bottom: 24px;
-  padding: 0;
 }
 
 main form legend {
@@ -262,7 +272,33 @@ main form input[type="submit"]:hover {
   background: #40916c;
 }
 
-/* ===== LOGIN  ===== */
+/* ================= TABELAS ================= */
+table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 18px rgba(43, 167, 39, 0.08);
+  margin-block: 40px;
+}
+
+table th,
+table td {
+  padding: 12px 14px;
+  border: 1px solid #eee;
+  font-size: 14px;
+  text-align: left;
+}
+
+table th {
+  background: #e8f5e9;
+  color: #004d40;
+}
+
+/* ================= LOGIN ================= */
 .log-register-section {
   display: flex;
   justify-content: center;
@@ -275,8 +311,8 @@ main form input[type="submit"]:hover {
 .log-register-section .register {
   flex: 1;
   padding: 20px;
-  background: #e8f5e9; /* fundo verde claro */
-  border: 1px solid #004d40; /* borda verde escuro */
+  background: #e8f5e9;
+  border: 1px solid #004d40;
 }
 
 .log-register-section h2 {
@@ -308,9 +344,7 @@ main form input[type="submit"]:hover {
   cursor: pointer;
 }
 
-/* =======================================================
-   FOOTER
-   ======================================================= */
+/* ================= FOOTER ================= */
 footer {
   background-color: #004d40;
   color: white;
@@ -352,64 +386,4 @@ footer {
 
 .btn-zap:hover {
   background-color: #128c7e;
-}
-
-/* GARANTE MENU ALINHADO IGUAL À HOME EM TODAS AS PÁGINAS */
-nav {
-  display: flex;
-  justify-content: center;
-}
-
-.menu {
-  max-width: 1200px;
-  width: 100%;
-  justify-content: flex-end;
-  padding-right: 20px;
-}
-
-/* LOGO DO MENU */
-.navbar .logo img {
-  height: 60px; /* tamanho da logo */
-  width: auto; /* mantém proporção */
-}
-
-table {
-  width: 100%;
-  max-width: 900px;
-  border-collapse: collapse;
-  background: #fff;
-  box-shadow: 0 6px 18px rgba(43, 167, 39, 0.08);
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid #ddd;
-  margin-block: 40px; /* afasta em cima e embaixo da tabela */
-}
-
-table th,
-table td {
-  padding: 12px 14px;
-  text-align: left;
-  font-size: 14px;
-  border: 1px solid #eee;
-}
-
-table th {
-  background: #e8f5e9;
-  color: #004d40;
-  font-weight: 600;
-}
-
-.btn {
-  display: inline-block;
-  margin-bottom: 60px;
-  padding: 10px 16px;
-  background-color: #2ecc71;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-}
-
-.btn:hover {
-  background-color: #27ae60;
 }
