@@ -1,34 +1,12 @@
-<<<<<<< HEAD
-/* ================= RESET / BASE ================= */
-=======
-/* ================= RESET ================= */
->>>>>>> 435dc7e4cd215b0a845e727541c7088af3d12ee8
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-body {
-  font-family: Arial, sans-serif;
-}
 
-/* ================= INTRO / BOAS-VINDAS ================= */
-=======
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9fdfb;
-}
-
-/* ================= INTRO ================= */
->>>>>>> 435dc7e4cd215b0a845e727541c7088af3d12ee8
 #welcome-screen {
   position: fixed;
   inset: 0;
