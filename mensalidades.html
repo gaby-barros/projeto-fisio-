@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <nav class="navbar">
+     <nav class="navbar">
       <div class="logo">
         <a href="index.html">
           <img src="imagens/logo.png" alt="FISIO+" style="height: 40px" />
@@ -18,6 +18,8 @@
       <ul class="menu">
         <li><a href="index.html">Início</a></li>
         <li><a href="login.html">Login</a></li>
+        <li><a href="planosepagamento.html"> Planos e Pagamentos</a></li>
+
         <li class="dropdown">
           <a href="#">Cadastros </a>
           <ul class="submenu">
@@ -27,10 +29,16 @@
         </li>
         <li><a href="agendamentos.html">Agendamentos</a></li>
         <li><a href="checkin.html">Check-in</a></li>
-        <a href="#">Area do Profissional </a>
-        <ul class="submenu">
-          <li><a href="relatorio.html"> Relatorios </a></li>
-        </ul>
+
+        <li class="dropdown">
+          <a href="#">Área do Profissional</a>
+          <ul class="submenu">
+            <li><a href="relatorio.html">Relatórios</a></li>
+            <li><a href="avaliacao.html">Avaliação</a></li>
+            <li><a href="prontuario.html">Prontuário</a></li>
+          </ul>
+        </li>
+
         <li class="dropdown">
           <a href="#">Administração </a>
           <ul class="submenu">
@@ -40,7 +48,9 @@
                 Clientes e Profissionais Cadastrados</a
               >
             </li>
-            <li><a href="mensalidades.html"> Mensalidades</a></li>
+            <li><a href="mensalidades.html"> Mensalidades e Pagamentos</a></li>
+            <li><a href="config.html"> Configurações </a></li>
+            <li><a href="cfinanceiro.html"> Controle Financeiro </a></li>
           </ul>
         </li>
       </ul>
@@ -72,17 +82,26 @@
               <td data-label="Serviço">Pilates</td>
               <td data-label="Valor">R$ 200,00</td>
               <td data-label="Pagamento">Cartão</td>
-              <td data-label="Vencimento">10/02/2026</td>
+              <td data-label="Vencimento">03/03/2026</td>
               <td data-label="Status">Pago</td>
             </tr>
 
             <tr>
               <td data-label="Cliente">João Pereira</td>
-              <td data-label="Serviço">Fisioterapia</td>
-              <td data-label="Valor">R$ 180,00</td>
+              <td data-label="Serviço">Geriatria</td>
+              <td data-label="Valor">R$ 400,00</td>
               <td data-label="Pagamento">Pix</td>
-              <td data-label="Vencimento">10/02/2026</td>
+              <td data-label="Vencimento">03/03/2026</td>
               <td data-label="Status">Pendente</td>
+
+               <tr>
+              <td data-label="Cliente">Jonas ferreira</td>
+              <td data-label="Serviço">Traumatologia</td>
+              <td data-label="Valor">R$ 600,00</td>
+              <td data-label="Pagamento">Pix</td>
+              <td data-label="Vencimento">03/03/2026</td>
+              <td data-label="Status">Pendente</td>
+            </tr>
             </tr>
           </tbody>
         </table>
@@ -107,20 +126,31 @@
             <tr>
               <td data-label="Profissional">Ana Costa</td>
               <td data-label="Especialidade">Pilates</td>
-              <td data-label="Atendimentos">20</td>
-              <td data-label="Valor">R$ 80,00</td>
-              <td data-label="Total">R$ 1.600,00</td>
-              <td data-label="Pagamento">30/01/2026</td>
+              <td data-label="Atendimentos">4</td>
+              <td data-label="Valor">R$ 30,00</td>
+              <td data-label="Total">R$ 120,00</td>
+              <td data-label="Pagamento">04/03/2026</td>
             </tr>
 
+
+            <tr>
+              <td data-label="Profissional">Samuel Lopes</td>
+              <td data-label="Especialidade">Geriatria</td>
+              <td data-label="Atendimentos">8</td>
+              <td data-label="Valor">R$ 30,00</td>
+              <td data-label="Total">R$ 240,00</td>
+              <td data-label="Pagamento">04/03/2026</td>
+            </tr>
+           
             <tr>
               <td data-label="Profissional">Lucas Rocha</td>
               <td data-label="Especialidade">Traumatologia</td>
-              <td data-label="Atendimentos">15</td>
-              <td data-label="Valor">R$ 100,00</td>
-              <td data-label="Total">R$ 1.500,00</td>
-              <td data-label="Pagamento">30/01/2026</td>
+              <td data-label="Atendimentos">10</td>
+              <td data-label="Valor">R$ 40,00</td>
+              <td data-label="Total">R$ 400,00</td>
+              <td data-label="Pagamento">04/03/2026</td>
             </tr>
+
           </tbody>
         </table>
       </section>

@@ -1,135 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Clientes</title>
-    <link rel="stylesheet" href="css/style.css">
-  
-  
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-</head>
- 
-<body>
-        <!-- MENU -->
+  <body>
+    <!-- MENU -->
     <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="imagens/logo.png">
-            </a>
-        </div>
-        
-        <ul class="menu">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li class="dropdown">
-                <a href="#">Cadastros</a>
-                <ul class="submenu">
-                    <li><a href="clientes.html">Cadastro de Clientes</a></li>
-                    <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
-                </ul>
+      <div class="logo">
+        <a href="index.html">
+          <img src="imagens/logo.png" alt="FISIO+" style="height: 40px" />
+        </a>
+      </div>
+
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="planosepagamento.html"> Planos e Pagamentos</a></li>
+
+        <li class="dropdown">
+          <a href="#">Cadastros </a>
+          <ul class="submenu">
+            <li><a href="clientes.html">Cadastro de Clientes</a></li>
+            <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+          </ul>
+        </li>
+        <li><a href="agendamentos.html">Agendamentos</a></li>
+        <li><a href="checkin.html">Check-in</a></li>
+
+        <li class="dropdown">
+          <a href="#">Área do Profissional</a>
+          <ul class="submenu">
+            <li><a href="relatorio.html">Relatórios</a></li>
+            <li><a href="avaliacao.html">Avaliação</a></li>
+            <li><a href="prontuario.html">Prontuário</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Administração </a>
+          <ul class="submenu">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li>
+              <a href="cepcadastrados.html">
+                Clientes e Profissionais Cadastrados</a
+              >
             </li>
-            <li><a href="agendamentos.html">Agendamentos</a></li>
-            <li><a href="checkin.html">Check-in</a></li>
-            <li><a href="areadoprofissional.html">Área do Profissional</a></li>
-             <li class="dropdown">
-                <a href="#">Administração </a>
-                <ul class="submenu">
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="cepcadastrados.html"> Clientes e ProfissionaisCadastrados</a></li>
-                      <li><a href="mensalidades.html"> Mensalidades</a></li>
-                      <li><a href="config.html"> configurações</a></li>
-                    
-                </ul>
-            </li>
-        </ul> 
+            <li><a href="mensalidades.html"> Mensalidades e Pagamentos</a></li>
+            <li><a href="config.html"> Configurações </a></li>
+            <li><a href="cfinanceiro.html"> Controle Financeiro </a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
 
     <!-- CONTEÚDO -->
     <main>
-        <h1>Cadastro de Clientes</h1>
+      <h1>Cadastro de Clientes</h1>
 
-        <form>
-            <!-----Dados pessoais -->
-            <fieldset>
-               <legend> Dados Pessoais </legend>
+      <form>
+        <fieldset>
+          <legend>Dados Pessoais</legend>
 
-               <label> Nome Completo </label>
-               <input type="text" required>
-            
-               <label> CPF </label>
-               <input type="text" >
-               
-               <label> Data de Nascimento </label>
-               <input type="date">
+          <label> Nome Completo </label>
+          <input type="text" required />
 
-               <label>Sexo</label>
-               <select>
-                      <option>Selecione</option>
-                       <option>Feminino</option>
-                        <option>Masculino</option>
-                        <option>Outros</option>
-                </select>
-            </fieldset>
+          <label> CPF </label>
+          <input type="text" />
 
+          <label> Data de Nascimento </label>
+          <input type="date" />
 
-            <fieldset>
-               <legend> Contato </legend>
+          <label>Sexo</label>
+          <select>
+            <option>Selecione</option>
+            <option>Feminino</option>
+            <option>Masculino</option>
+            <option>Outros</option>
+          </select>
+        </fieldset>
 
-               <label> Telefone </label>
-               <input type="tel">
-            
-               <label>E-mail</label>
-               <input type="email" >
-            </fieldset>
+        <fieldset>
+          <legend>Contato</legend>
 
-            <fieldset>
-               <legend> Endereço </legend>
+          <label> Telefone </label>
+          <input type="tel" />
 
-               <label> CEP </label>
-               <input type="text">
-            
-               <label> Rua </label>
-               <input type="text" >
-               
-               <label> Número </label>
-               <input type="text">
+          <label>E-mail</label>
+          <input type="email" />
+        </fieldset>
 
-               <label> Cidade </label>
-               <input type="text">
+        <fieldset>
+          <legend>Endereço</legend>
 
-            </fieldset>
+          <label> CEP </label>
+          <input type="text" />
 
-        
-            <fieldset>
-               <legend> Informações Clínicas </legend>
+          <label> Rua </label>
+          <input type="text" />
 
-               <label> Convênio </label>
-               <input type="text">
-            
-               <label> Numero da Carteirinha </label>
-               <input type="text" >
-               
-               <label> Número de Autorização </label>
-               <input type="text">
+          <label> Número </label>
+          <input type="text" />
 
-               <label> Observações </label>
-               <textarea rows="5"></textarea>
-               
-             </fieldset>
+          <label> Cidade </label>
+          <input type="text" />
+        </fieldset>
 
-           <button type="submit"> Salvar Cadastro </button>
+        <fieldset>
+          <legend>Informações Clínicas</legend>
 
-        </form>
+          <label> Convênio </label>
+          <input type="text" />
 
-       <a href="cepcadastrados.html" class="btn" style="margin-top:20px;">
+          <label> Numero da Carteirinha </label>
+          <input type="text" />
+
+          <label> Número de Autorização </label>
+          <input type="text" />
+
+          <label> Observações </label>
+          <textarea rows="5"></textarea>
+        </fieldset>
+
+        <button type="submit">Salvar Cadastro</button>
+      </form>
+
+      <a href="cepcadastrados.html" class="btn" style="margin-top: 20px">
         Ver Clientes e Profissionais Cadastrados
-    </a>
-
-
-
+      </a>
     </main>
-
-    
-</body>
+  </body>
 </html>

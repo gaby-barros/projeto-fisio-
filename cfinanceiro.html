@@ -8,38 +8,52 @@
 </head>
 <body>
 
-     <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="imagens/logo.png">
-            </a>
-        </div>
-        
-        <ul class="menu">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li class="dropdown">
-                <a href="#">Cadastros</a>
-                <ul class="submenu">
-                    <li><a href="clientes.html">Cadastro de Clientes</a></li>
-                    <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
-                </ul>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="imagens/logo.png" alt="FISIO+" style="height: 40px" />
+        </a>
+      </div>
+
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="planosepagamento.html"> Planos e Pagamentos</a></li>
+
+        <li class="dropdown">
+          <a href="#">Cadastros </a>
+          <ul class="submenu">
+            <li><a href="clientes.html">Cadastro de Clientes</a></li>
+            <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+          </ul>
+        </li>
+        <li><a href="agendamentos.html">Agendamentos</a></li>
+        <li><a href="checkin.html">Check-in</a></li>
+
+        <li class="dropdown">
+          <a href="#">Área do Profissional</a>
+          <ul class="submenu">
+            <li><a href="relatorio.html">Relatórios</a></li>
+            <li><a href="avaliacao.html">Avaliação</a></li>
+            <li><a href="prontuario.html">Prontuário</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Administração </a>
+          <ul class="submenu">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li>
+              <a href="cepcadastrados.html">
+                Clientes e Profissionais Cadastrados</a
+              >
             </li>
-            <li><a href="agendamentos.html">Agendamentos</a></li>
-            <li><a href="checkin.html">Check-in</a></li>
-            <li><a href="areadoprofissional.html">Área do Profissional</a></li>
-             <li class="dropdown">
-                <a href="#">Administração </a>
-                <ul class="submenu">
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="cepcadastrados.html"> Clientes e Profissionais Cadastrados</a></li>
-                    <li><a href="mensalidades.html"> Mensalidades</a></li>
-                    <li><a href="config.html"> Configurações</a></li>
-                    
-                    
-                </ul>
-            </li>
-        </ul> 
+            <li><a href="mensalidades.html"> Mensalidades e Pagamentos</a></li>
+            <li><a href="config.html"> Configurações </a></li>
+            <li><a href="cfinanceiro.html"> Controle Financeiro </a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
 
 <header>
@@ -52,17 +66,17 @@
     <section class="resumo-financeiro">
         <div class="card entrada">
             <h2>Total de Entradas</h2>
-            <p>R$ 5.800,00</p>
+            <p>R$ 1.200,00</p>
         </div>
 
         <div class="card saida">
             <h2>Total de Saídas</h2>
-            <p>R$ 3.200,00</p>
+            <p>R$ 760,00</p>
         </div>
 
         <div class="card saldo">
             <h2>Saldo Final</h2>
-            <p>R$ 2.600,00</p>
+            <p>R$ 440,00</p>
         </div>
     </section>
 
@@ -82,17 +96,17 @@
 
             <tbody>
                 <tr>
-                    <td data-label="Data">05/01/2026</td>
+                    <td data-label="Data">03/03/2026</td>
                     <td data-label="Descrição">Mensalidades dos Clientes</td>
                     <td data-label="Tipo" class="entrada-text">Entrada</td>
-                    <td data-label="Valor">R$ 5.800,00</td>
+                    <td data-label="Valor">R$ 1200,00</td>
                 </tr>
 
                 <tr>
-                    <td data-label="Data">30/01/2026</td>
+                    <td data-label="Data">04/03/2026</td>
                     <td data-label="Descrição">Pagamento Profissionais</td>
                     <td data-label="Tipo" class="saida-text">Saída</td>
-                    <td data-label="Valor">R$ 3.200,00</td>
+                    <td data-label="Valor">R$ 760,00</td>
                 </tr>
             </tbody>
         </table>
