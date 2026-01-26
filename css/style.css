@@ -14,7 +14,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f9fdfb;
 }
-
+ /* FERNANDA    /*
 /* ================= INTRO ================= */
 #welcome-screen {
   position: fixed;
@@ -49,6 +49,8 @@ body {
   visibility: hidden;
 }
 
+
+/* LUCAS   /*
 /* ================= NAVBAR (ALINHAMENTO CORRIGIDO) ================= */
 .navbar {
   background: #aee9c9;
@@ -75,6 +77,7 @@ nav {
   align-items: center;
 }
 
+/* LUCAS /*
 /* ================= MENU ================= */
 .menu {
   list-style: none;
@@ -108,7 +111,7 @@ nav {
   color: #fff;
   border-radius: 4px;
 }
-
+/* LUCAS   /*
 /* ================= SUBMENU ================= */
 .submenu {
   display: none;
@@ -131,6 +134,7 @@ nav {
   display: block;
   padding: 10px;
 }
+/* EMILY /*
 
 /* ================= TABELAS ESTILO GOOGLE FORMS ================= */
 table {
@@ -176,7 +180,7 @@ tbody tr:hover {
   background-color: #f1f3f4;
   transition: 0.2s;
 }
-
+/* EMILY   /*
 /* ================= CONTEÚDO ================= */
 .container,
 .servicos {
@@ -195,7 +199,7 @@ tbody tr:hover {
   margin: 20px auto;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
+/* GABY    /*
 /* ================= CARDS (APENAS ISSO MUDA) ================= */
 
 /* Container dos cards na horizontal */
@@ -290,7 +294,7 @@ tbody tr:hover {
 .btn:hover {
   background: #27ae60;
 }
-
+/* EMILY  /*
 /* ================= FORMULÁRIOS (ESTILO GOOGLE + CENTRALIZAÇÃO TOTAL) ================= */
 
 /* O 'main' agora controla o alinhamento de tudo: título, form e botões */
@@ -381,7 +385,7 @@ main > a.btn {
   margin: 0 auto !important;
   text-align: center !important;
 }
-
+/* GABY   /*
 /* ================= FOOTER ================= */
 footer {
   background: #004d40;
