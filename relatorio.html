@@ -1,107 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>relatorio</title>
-      <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Relatórios</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<main class="container">
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="imagens/logo.png" alt="FISIO+" style="height: 40px" />
+        </a>
+      </div>
 
-  <!-- CABEÇALHO -->
-  <header class="header">
-    <div class="logo">FISIO+</div>
-    <div>
-      <h1>Relatório do Paciente</h1>
-      <p id="data-emissao"></p>
-    </div>
-  </header>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="planosepagamento.html"> Planos e Pagamentos</a></li>
 
-  <!-- DADOS -->
-  <section class="box">
-    <h2>Dados do Paciente</h2>
-    <div class="info-grid">
-      <p><strong>Nome:</strong> Maria Silva</p>
-      <p><strong>Idade:</strong> 35 anos</p>
-      <p><strong>Profissional:</strong> João Pereira</p>
-      <p><strong>Plano:</strong> Particular</p>
-    </div>
-  </section>
+        <li class="dropdown">
+          <a href="#">Cadastros </a>
+          <ul class="submenu">
+            <li><a href="clientes.html">Cadastro de Clientes</a></li>
+            <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+          </ul>
+        </li>
+        <li><a href="agendamentos.html">Agendamentos</a></li>
+        <li><a href="checkin.html">Check-in</a></li>
 
-  <!-- FILTRO -->
-  <section class="filtro">
-    <div>
-      <label>Data Inicial</label>
-      <input type="date" id="dataInicio">
-    </div>
+        <li class="dropdown">
+          <a href="#">Área do Profissional</a>
+          <ul class="submenu">
+            <li><a href="relatorio.html">Relatórios</a></li>
+            <li><a href="avaliacao.html">Avaliação</a></li>
+            <li><a href="prontuario.html">Prontuário</a></li>
+          </ul>
+        </li>
 
-    <div>
-      <label>Data Final</label>
-      <input type="date" id="dataFim">
-    </div>
+        <li class="dropdown">
+          <a href="#">Administração </a>
+          <ul class="submenu">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li>
+              <a href="cepcadastrados.html">
+                Clientes e Profissionais Cadastrados</a
+              >
+            </li>
+            <li><a href="mensalidades.html"> Mensalidades e Pagamentos</a></li>
+            <li><a href="config.html"> Configurações </a></li>
+            <li><a href="cfinanceiro.html"> Controle Financeiro </a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
-    <button onclick="filtrar()">Filtrar</button>
-  </section>
 
-  <!-- CARDS -->
-  <section class="cards">
-    <div class="card">Agendadas<br><span id="agendadas">2</span></div>
-    <div class="card">Realizadas<br><span id="realizadas">1</span></div>
-    <div class="card">Faltas<br><span id="faltas">1</span></div>
-  </section>
+    <main>
+      <h1>Relatórios de Atendimentos</h1>
 
-  <!-- TABELA -->
-  <section class="box">
-    <h2>Histórico</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Data</th>
-          <th>Horário</th>
-          <th>Status</th>
-          <th>Ação</th>
-        </tr>
-      </thead>
+      <!-- FORMULÁRIO DE FILTRO -->
+      <section>
+        <h2>Filtrar Relatório</h2>
 
-      <tbody id="tabela">
-        <tr>
-          <td>2026-01-10</td>
-          <td>08:00</td>
-          <td class="feito">Realizado</td>
-          <td>-</td>
-        </tr>
+        <form>
+          <label>Cliente:</label><br />
+          <input
+            type="text"
+            name="cliente"
+            placeholder="Nome do cliente"
+          /><br /><br />
 
-        <tr>
-          <td>2026-01-12</td>
-          <td>09:00</td>
-          <td class="pendente">Pendente</td>
-          <td>
-            <button onclick="marcar(this, 'Realizado')">Realizar</button>
-            <button onclick="marcar(this, 'Falta')">Falta</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+          <label>Profissional:</label><br />
+          <input
+            type="text"
+            name="profissional"
+            placeholder="Nome do profissional"
+          /><br /><br />
 
-  <!-- OBSERVAÇÃO -->
-  <section class="box">
-    <h2>Evolução</h2>
-    <textarea placeholder="Digite observações do atendimento..."></textarea>
-  </section>
+          <label>Status:</label><br />
+          <select name="status">
+            <option value="">Todos</option>
+            <option value="pendente">Pendente</option>
+            <option value="realizado">Realizado</option>
+            <option value="cancelado">Cancelado</option></select
+          ><br /><br />
 
-  <!-- RODAPÉ -->
-  <footer class="footer">
-    <button onclick="window.print()">Imprimir Relatório</button>
-  </footer>
+          <label>Data Inicial:</label><br />
+          <input type="date" name="data_inicio" /><br /><br />
 
-</main>
+          <label>Data Final:</label><br />
+          <input type="date" name="data_fim" /><br /><br />
 
-<script src="relatorio-paciente.js"></script>
-</body>
-</html>
+          <button type="submit">Gerar Relatório</button>
+        </form>
+      </section>
+
+
+      <!-- RESULTADO DO RELATÓRIO -->
+      <section>
+        <h2>Resultado do Relatório</h2>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Data</th>
+              <th>Horário</th>
+              <th>Profissional</th>
+              <th>Serviço</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Maria Silva</td>
+              <td>01/02/2026</td>
+              <td>08:00</td>
+              <td>João</td>
+              <td>Pilates</td>
+              <td>iniciado</td>
+            </tr>
+
+            <tr>
+              <td>João Pereira</td>
+              <td>03/03/2026</td>
+              <td>10:00</td>
+              <td>Fernanda</td>
+              <td> Traumatologia</td>
+              <td>Realizado</td>
+            </tr>
+
+            <tr>
+              <td>jonas ferreira</td>
+              <td>03/03/2026</td>
+              <td>14:00</td>
+              <td>Carlos</td>
+              <td>Geriatria</td>
+              <td>Traumatologia</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
     
-</body>
+    </form>
+    </main>
+  </body>
 </html>

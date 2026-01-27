@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Clínica Fisio+</title>
+    <title> controle financeiro</title>
     <link rel="stylesheet" href="css/style.css">
-
-
 </head>
-
 <body>
 
     <nav class="navbar">
@@ -59,56 +56,63 @@
       </ul>
     </nav>
 
-    <main class="dashboard">
+<header>
+    <h1>Controle Financeiro</h1>
+</header>
 
-        <div class="dashboard-conteudo">
+<main>
 
-            <div>
-                <h1>Dashboard - Clínica Fisio+</h1>
-                <p>Visão geral do sistema</p>
-            </div>
-
-            <div>
-
-                <div class="cards">
-                    <div class="card">
-                        <h3>Clientes</h3>
-                        <div class="numero">128</div>
-                        <p>Cadastrados</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Profissionais</h3>
-                        <div class="numero">20</div>
-                        <p>Ativos</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Agendamentos</h3>
-                        <div class="numero">34</div>
-                        <p>Hoje</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Check-ins</h3>
-                        <div class="numero">18</div>
-                        <p>Realizados</p>
-                    </div>
-                </div>
-
-                <div class="atalhos">
-                    <h3>Acessos rápidos</h3>
-                       <button class="checkin">checkin</button>
-                       <button class="agendamentos">Agendamento</button>
-                       <button class="Clientes">Cadastrar Clientes</button>
-
-                </div>
-
-            </div>
-
+    <!-- Resumo financeiro -->
+    <section class="resumo-financeiro">
+        <div class="card entrada">
+            <h2>Total de Entradas</h2>
+            <p>R$ 1.200,00</p>
         </div>
 
-    </main>
+        <div class="card saida">
+            <h2>Total de Saídas</h2>
+            <p>R$ 760,00</p>
+        </div>
+
+        <div class="card saldo">
+            <h2>Saldo Final</h2>
+            <p>R$ 440,00</p>
+        </div>
+    </section>
+
+    <!-- Tabela de movimentações -->
+    <section class="movimentacoes">
+        <h2>Movimentações Financeiras</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td data-label="Data">03/03/2026</td>
+                    <td data-label="Descrição">Mensalidades dos Clientes</td>
+                    <td data-label="Tipo" class="entrada-text">Entrada</td>
+                    <td data-label="Valor">R$ 1200,00</td>
+                </tr>
+
+                <tr>
+                    <td data-label="Data">04/03/2026</td>
+                    <td data-label="Descrição">Pagamento Profissionais</td>
+                    <td data-label="Tipo" class="saida-text">Saída</td>
+                    <td data-label="Valor">R$ 760,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
 
 </body>
 </html>

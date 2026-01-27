@@ -1,15 +1,14 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro de Clientes</title>
+    <title>avaliação</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body>
-    <!-- MENU -->
-    <nav class="navbar">
+   
+     <nav class="navbar">
       <div class="logo">
         <a href="index.html">
           <img src="imagens/logo.png" alt="FISIO+" style="height: 40px" />
@@ -57,80 +56,37 @@
       </ul>
     </nav>
 
-    <!-- CONTEÚDO -->
+
     <main>
-      <h1>Cadastro de Clientes</h1>
+      <div class="avaliacao">
+        <h2>Avaliação do Atendimento</h2>
 
-      <form>
-        <fieldset>
-          <legend>Dados Pessoais</legend>
+        <form>
+          <label for="profissional">Nome do fisioterapeuta</label>
+          <input type="text" id="profissional" required />
 
-          <label> Nome Completo </label>
-          <input type="text" required />
+          <label for="paciente">Nome do paciente</label>
+          <input type="text" id="paciente" required />
 
-          <label> CPF </label>
-          <input type="text" />
-
-          <label> Data de Nascimento </label>
-          <input type="date" />
-
-          <label>Sexo</label>
-          <select>
-            <option>Selecione</option>
-            <option>Feminino</option>
-            <option>Masculino</option>
-            <option>Outros</option>
+          <label for="evolucao">Evolução do paciente</label>
+          <select id="evolucao" required>
+            <option value="">Selecione</option>
+            <option>Sem evolução</option>
+            <option>Leve melhora</option>
+            <option>Boa evolução</option>
+            <option>Excelente evolução</option>
           </select>
-        </fieldset>
 
-        <fieldset>
-          <legend>Contato</legend>
+          <label for="observacoes">Observações clínicas</label>
+          <textarea
+            id="observacoes"
+            rows="4"
+            placeholder="Descreva a sessão"
+          ></textarea>
 
-          <label> Telefone </label>
-          <input type="tel" />
-
-          <label>E-mail</label>
-          <input type="email" />
-        </fieldset>
-
-        <fieldset>
-          <legend>Endereço</legend>
-
-          <label> CEP </label>
-          <input type="text" />
-
-          <label> Rua </label>
-          <input type="text" />
-
-          <label> Número </label>
-          <input type="text" />
-
-          <label> Cidade </label>
-          <input type="text" />
-        </fieldset>
-
-        <fieldset>
-          <legend>Informações Clínicas</legend>
-
-          <label> Convênio </label>
-          <input type="text" />
-
-          <label> Numero da Carteirinha </label>
-          <input type="text" />
-
-          <label> Número de Autorização </label>
-          <input type="text" />
-
-          <label> Observações </label>
-          <textarea rows="5"></textarea>
-        </fieldset>
-
-        <button type="submit">Salvar Cadastro</button>
-      </form>
-
-      <a href="cepcadastrados.html" class="btn" style="margin-top: 20px">
-        Ver Clientes e Profissionais Cadastrados
-      </a>
+          <button type="submit">Registrar Avaliação</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>

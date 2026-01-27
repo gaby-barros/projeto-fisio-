@@ -1,442 +1,443 @@
-
-/* =======================================================
-   RESET / PADRÃO
-   ======================================================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #f9fdfb;
 }
-
-/* =======================================================
-   TELA DE BOAS-VINDAS (INTRO)
-   ======================================================= */
+ /* FERNANDA    /*
+/* ================= INTRO ================= */
 #welcome-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99999;
-    background-color: #e8f5e9;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s ease, visibility 1s;
+  position: fixed;
+  inset: 0;
+  background: #e8f5e9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition:
+    opacity 1s,
+    visibility 1s;
+  z-index: 99999;
 }
 
 .intro-img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 #welcome-screen h1 {
-    color: #004d40;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    font-weight: bold;
+  color: #004d40;
+  font-size: 1.8rem;
+  text-transform: uppercase;
 }
 
 .sumir {
-    opacity: 0;
-    visibility: hidden;
-    display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
-/* =======================================================
-   NAVBAR / MENU (VISUAL ORIGINAL + CORREÇÃO)
-   ======================================================= */
+
+/* LUCAS   /*
+/* ================= NAVBAR (ALINHAMENTO CORRIGIDO) ================= */
 .navbar {
-    background-color: #aee9c9;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid #c8e6c9;
+  background: #aee9c9;
+  padding: 10px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #c8e6c9;
+  width: 100%;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  height: 70px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+/* LUCAS /*
+/* ================= MENU ================= */
 .menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
 }
 
 .menu li {
-    position: relative;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .menu a {
-    color: #004d40;
-    text-decoration: none;
-    padding: 15px;
-    display: block;
-    font-weight: bold;
-    font-size: 16px;
+  padding: 10px 15px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #004d40;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
 }
 
 .menu a:hover {
-    background-color: #3e693f;
-    border-radius: 4px;
-    color: #fff;
+  background: #3e693f;
+  color: #fff;
+  border-radius: 4px;
 }
-
-/* SUBMENU (CORRIGIDO SEM QUEBRAR HOME) */
+/* LUCAS   /*
+/* ================= SUBMENU ================= */
 .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #e8f5e9;
-    border: 1px solid #c8e6c9;
-    min-width: 220px;
-    list-style: none;
-    padding: 0;
-    z-index: 999;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.submenu li {
-    border-bottom: 1px solid #dcedc8;
-}
-
-.submenu a {
-    padding: 12px 15px;
-    font-size: 14px;
+  display: none;
+  position: absolute;
+  position: relative;
+  top: 100%;
+  left: 0;
+  background: #e8f5e9;
+  min-width: 200px;
+  border: 1px solid #c8e6c9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 .dropdown:hover .submenu {
-    display: block;
+  display: block;
 }
 
-/* =======================================================
-   CONTEÚDO PRINCIPAL (HOME)
-   ======================================================= */
-.container {
-    text-align: center;
-    padding: 40px 20px;
+.submenu li a {
+  display: block;
+  padding: 10px;
+}
+/* EMILY /*
+
+/* ================= TABELAS ESTILO GOOGLE FORMS ================= */
+table {
+  width: 100%;
+  max-width: 1100px;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow:
+    0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #dadce0;
+}
+
+thead {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dadce0;
+}
+
+th,
+td {
+  padding: 16px 24px;
+  text-align: left;
+}
+
+th {
+  color: #3c4043;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.2px;
+}
+
+td {
+  border-bottom: 1px solid #eee;
+  color: #202124;
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background-color: #f1f3f4;
+  transition: 0.2s;
+}
+/* EMILY   /*
+/* ================= CONTEÚDO ================= */
+.container,
+.servicos {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.container h2 {
+  color: #004d40;
+  margin-bottom: 10px;
 }
 
 .imagem-site {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin-top: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  max-width: 300px;
+  border-radius: 15px;
+  margin: 20px auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* GABY    /*
+/* ================= CARDS (APENAS ISSO MUDA) ================= */
+
+/* Container dos cards na horizontal */
+.cards,
+.grid,
+.planos-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
-/* =======================================================
-   SERVIÇOS / CARDS
-   ======================================================= */
-.servicos {
-    padding: 40px 20px;
-    text-align: center;
+.planos-container {
+  margin-bottom: 80px;
 }
 
-.grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
+/* Card padrão (serve para TODOS) */
 .card {
-    background: #fff;
-    width: 200px;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid #eee;
-    transition: .3s;
-    border-bottom: 4px solid #004d40;
+  width: 280px;
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 22px;
+  background: #fff;
+
+  border-radius: 14px;
+  border: 1px solid #e0e0e0;
+  border-bottom: 6px solid #004d40;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+/* Hover */
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
 }
 
-.img-icone {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    background-color: #eee;
+/* Conteúdo interno */
+.card img {
+  max-width: 80px;
+  margin: 0 auto 15px;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 12px;
-    border: 1px solid #004d40;
-    padding: 5px 15px;
-    border-radius: 20px;
-    color: #004d40;
+.card h2,
+.card h3 {
+  color: #004d40;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
-.btn:hover {
-    background: #004d40;
-    color: #fff;
+.card p {
+  font-size: 14px;
+  color: #555;
 }
 
-/* =======================================================
-   FOOTER
-   ======================================================= */
-footer {
-    background-color: #004d40;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 50px;
+.card .valor,
+.card .numero {
+  font-size: 26px;
+  font-weight: bold;
+  color: #2ab162;
+  margin: 10px 0;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-    align-items: center;
+.btn,
+button,
+input[type="submit"],
+input[type="button"],
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 10px;
+  padding: 12px 24px;
+  min-height: 42px;
+
+  background-color: #34be6e;
+  color: #ffffff !important;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.footer-item h3 {
-    color: #b2dfdb;
-    font-size: 16px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
+/* Hover */
+.btn:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+a.btn:hover {
+  background-color: #2c9c5b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
-.footer-item p {
-    color: #e0f2f1;
-    font-size: 14px;
+/* Clique */
+.btn:active,
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+  transform: scale(0.98);
 }
 
-.btn-zap {
-    background-color: #25D366;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 5px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
+/* EMILY  /*
+/* ================= FORMULÁRIOS (ESTILO GOOGLE + CENTRALIZAÇÃO TOTAL) ================= */
 
-.btn-zap:hover {
-    background-color: #128C7E;
-}
-
-/* =======================================================
-   FORMULÁRIOS (SOMENTE PÁGINAS DE CADASTRO)
-   ======================================================= */
+/* O 'main' agora controla o alinhamento de tudo: título, form e botões */
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 16px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 40px 16px !important;
+  width: 100% !important;
 }
 
-main h1 {
-    margin-bottom: 24px;
-    color: #004d40;
+/* Títulos principais */
+main h1,
+main h2 {
+  text-align: center !important;
+  width: 100% !important;
+  margin-bottom: 25px !important;
+  color: #004d40 !important;
 }
 
+/* Formulário */
 main form {
-    width: 100%;
-    max-width: 520px;
-    background: #fff;
-    padding: 32px 28px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  width: 100% !important;
+  max-width: 480px !important;
+  padding: 32px !important;
+  background: #fff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #dadce0 !important;
+  margin: 80px 0 30px 0 !important;
 }
 
+/* Remove bordas de fieldset */
 main form fieldset {
-    border: none;
-    margin-bottom: 24px;
-    padding: 0;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 0 20px 0 !important;
 }
 
-main form legend {
-    font-size: 14px;
-    font-weight: 600;
-    color: #1b4332;
-    margin-bottom: 12px;
-}
+/* ===== AJUSTE DOS TÍTULOS DOS CAMPOS ===== */
 
+/* Labels (títulos dos campos) */
 main form label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 6px;
+  display: block !important;
+  margin-bottom: 6px !important;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
 }
 
-main form input,
-main form select,
-main form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #dadce0;
-    border-radius: 6px;
-    margin-bottom: 16px;
-    font-size: 14px;
-    transition: .2s;
+/* Caso use legend ou texto solto */
+main form legend {
+  display: block !important;
+  margin-bottom: 10px !important;
+  font-weight: 600;
+  color: #444;
 }
 
-main form input:focus,
-main form select:focus,
-main form textarea:focus {
-    outline: none;
-    border-color: #52b788;
-    box-shadow: 0 0 0 2px rgba(82,183,136,.2);
+/* Inputs estilo Google Forms */
+main input[type="text"],
+main input[type="email"],
+main input[type="tel"],
+main input[type="date"],
+main select,
+main textarea {
+  width: 100% !important;
+  padding: 12px 0 !important;
+  margin-bottom: 22px !important; /* espaço entre os campos */
+  border: none !important;
+  border-bottom: 1px solid #dadce0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
 }
 
-main form button,
-main form input[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    background: #52b788;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
+/* Botão Salvar */
+main form input[type="submit"],
+main form button[type="submit"] {
+  width: 100% !important;
+  background-color: #50c975 !important;
+  margin-top: 10px !important;
 }
 
-main form button:hover,
-main form input[type="submit"]:hover {
-    background: #40916c;
+/* Botão fora do formulário */
+main > button,
+main > a.btn {
+  display: inline-block !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+/* GABY   /*
+/* ================= FOOTER ================= */
+footer {
+  background: #004d40;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  line-height: 1.6;
 }
 
-
-/* GARANTE MENU ALINHADO IGUAL À HOME EM TODAS AS PÁGINAS */
-nav {
-    display: flex;
-    justify-content: center;
-}
-
-.menu {
-    max-width: 1200px;
-    width: 100%;
-    justify-content: flex-end;
-    padding-right: 20px;
-}
-
-
-/* LOGO DO MENU */
-.navbar .logo img {
-    height: 60px;      /* tamanho da logo */
-    width: auto;       /* mantém proporção */
-}
-
-
-table {
-    width: 100%;
-    max-width: 900px;
-    border-collapse: collapse;
-    background: #fff;
-    box-shadow: 0 6px 18px rgba(43, 167, 39, 0.08);
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #ddd;
-    margin-block: 40px; /* afasta em cima e embaixo da tabela */
-}
-
-table th, table td {
-    padding: 12px 14px;
-    text-align: left;
-    font-size: 14px;
-    border: 1px solid #eee;
-}
-
-table th {
-    background: #e8f5e9;
-    color: #004d40;
-    font-weight: 600;
-}
-
-
-
-/* ===== Login e Registro simples e verde ===== */
-.log-register-section {
-    display: flex;
-    justify-content: center;
-    max-width: 800px;
-    margin: 50px auto;
-    gap: 20px;
-}
-
-.log-register-section .log-in,
-.log-register-section .register {
-    flex: 1;
-    padding: 20px;
-    background: #e8f5e9;       /* fundo verde claro */
-    border: 1px solid #004d40; /* borda verde escuro */
-}
-
-.log-register-section h2 {
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
     text-align: center;
-    color: #004d40;
-    margin-bottom: 15px;
-}
-
-.log-register-section label {
-    display: block;
-    margin-top: 10px;
-    color: #004d40;
-}
-
-.log-register-section input {
+  }
+  .menu {
+    flex-direction: column;
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #004d40;
-}
-
-.log-register-section button {
-    width: 100%;
-    padding: 10px;
     margin-top: 15px;
-    background: #004d40;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 16px;
-    background-color: #2ecc71; /* verde */
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: background-color 0.3s;
-}
-
-.btn {
-    display: inline-block;
-    margin-bottom: 60px;
-    padding: 10px 16px;
-    background-color: #2ecc71;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-}
-
-.btn:hover {
-    background-color: #27ae60;
+  }
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }

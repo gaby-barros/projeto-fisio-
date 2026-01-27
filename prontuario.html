@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisio+ - Avaliações/Prontuário</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+button {
+    background-color: rgb(0, 96, 69);
+    color: white;
+    border-width: 1px;
+}
+
+fieldset {
+    border-color:#004d40;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #e9ebe6;
+}
+
+legend {
+    font-weight: bold;
+}
+
+
+
+.navbar {
+    background-color: #aee9c9;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #c8e6c9;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    color: #004d40;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.logo img {
+    width: auto;
+    height: 60px;
+}
+
+.menu a:hover {
+    background-color: #3e693f;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    min-width: 220px;
+    list-style: none;
+    padding: 0;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.submenu li {
+    border-bottom: 1px solid #dcedc8;
+}
+
+.submenu a {
+    padding: 12px 15px;
+    font-size: 14px;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.page-title img {
+    height: 45px;   
+    width: auto;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+.pacient-identification {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.pacient-identification-gender {
+    display: flex;
+    flex-direction: row;
+}
+
+.pacient-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.symthoms-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.medications {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.vicious-habits {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.doctor-opinion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.doctor-recomendation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.extra-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-area {
+    gap:10px;
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+
+
+
+
+
+
+<body>
+   <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="imagens/logo.png" alt="FISIO+" style="height: 40px" />
+        </a>
+      </div>
+
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="planosepagamento.html"> Planos e Pagamentos</a></li>
+
+        <li class="dropdown">
+          <a href="#">Cadastros </a>
+          <ul class="submenu">
+            <li><a href="clientes.html">Cadastro de Clientes</a></li>
+            <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+          </ul>
+        </li>
+        <li><a href="agendamentos.html">Agendamentos</a></li>
+        <li><a href="checkin.html">Check-in</a></li>
+
+        <li class="dropdown">
+          <a href="#">Área do Profissional</a>
+          <ul class="submenu">
+            <li><a href="relatorio.html">Relatórios</a></li>
+            <li><a href="avaliacao.html">Avaliação</a></li>
+            <li><a href="prontuario.html">Prontuário</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Administração </a>
+          <ul class="submenu">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li>
+              <a href="cepcadastrados.html">
+                Clientes e Profissionais Cadastrados</a
+              >
+            </li>
+            <li><a href="mensalidades.html"> Mensalidades e Pagamentos</a></li>
+            <li><a href="config.html"> Configurações </a></li>
+            <li><a href="cfinanceiro.html"> Controle Financeiro </a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+
+    <h2 class="page-title">
+        <img src="imagens/medical-record.png">  
+        Avaliação Médica / Prontuário
+    </h2>
+
+    <div class="prontuario-section">
+        <div class="form-area">
+            <form>
+                <fieldset>
+                    <legend>Seção 1 - Identificação do Paciente</legend>
+                    <div class="pacient-identification">
+                        <label for="pacient-name">Nome</label>
+                        <input type="text" id="pacient-name">
+                        <label for="pacient-birthdate">Data de Nascimento</label>
+                        <input type="date" id="pacient-birthdate">
+                        <div class="pacient-identification-gender">
+                            <label for="gender-male">Masculino</label>
+                            <input type="radio" id="gender-male" name="gender">
+                            <label for="gender-female">Feminino</label>
+                            <input type="radio" id="gender-female" name="gender">
+                        </div>
+                        <label for="telephone">Número de Telefone</label>
+                        <input type="number" id="telephone">
+                        <label for="CPF">CPF</label>
+                        <input type="number" id="CPF">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Seção 2 - Anamnese</legend>
+                    <div class="pacient-description">
+                        <label for="description">O que o paciente está sentindo?</label>
+                        <textarea id="description" rows="6" cols="45"></textarea>
+                    </div>
+                    <div class="symthoms-start">
+                        <label for="symthoms-start-date">Quando começou os sintomas?</label>
+                        <textarea id="symthoms-start-date" rows="6" cols="45"></textarea>
+                    </div>
+                    <div class="medications">
+                        <label for="medications-usage">Quais medicamentos o paciente usa?</label>
+                        <textarea id="medications-usage" rows="4" cols="35"></textarea>
+                    </div>
+                    <div class="vicious-habits">
+                        <label for="cigarret-habit">O paciente fuma?</label>
+                        <input type="checkbox" id="cigarret-habit">
+                        <label for="alcohol-habit">O paciente consome bebidas alcólicas frequentemente?</label>
+                        <input type="checkbox" id="alcohol-habit">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Seção 3 - Conclusão Médica</legend>
+                    <div class="doctor-opinion">
+                        <label for="opinion">Qual a opinião médica quanto a situação do paciente?</label>
+                        <textarea id="opinion" rows="5" cols="45"></textarea>
+                    </div>
+                    <div class="doctor-recomendation">
+                        <label for="recomendation">O que é recomendado pelo médico ao paciente?</label>
+                        <textarea id="recomendation" rows="5" cols="45"></textarea>
+                    </div>
+                    <div class="extra-info">
+                        <label for="info">Há algum detalhe a mais que necessita-se abordar?</label>
+                        <textarea id="info" rows="5" cols="45"></textarea>
+                    </div>
+                </fieldset>
+                <button type="submit" onclick="alert('O prontuário do paciente foi cadastrado.')">Cadastrar prontuário</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

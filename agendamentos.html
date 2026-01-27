@@ -1,86 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Agendamento</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    
-    <!-- MENU (CORRIGIDO     MENU -->
-      <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="imagens/logo.png">
-            </a>
-        </div>
-        
-        <ul class="menu">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li class="dropdown"></li>
-                <a href="#">Cadastros</a>
-                <ul class="submenu">
-                    <li><a href="clientes.html">Cadastro de Clientes</a></li>
-                    <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
-                </ul>
-            </li>
-            <li><a href="agendamentos.html">Agendamentos</a></li>
-            <li><a href="checkin.html">Check-in</a></li>
-            <li><a href="areadoprofissional.html">Área do Profissional</a></li>
-             <li class="dropdown">
-                <a href="#">Administração </a>
-                <ul class="submenu">
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="cepcadastrados.html"> Clientes e Profissionais Cadastrados</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- MENU -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="imagens/logo.png" alt="FISIO+" style="height: 40px" />
+        </a>
+      </div>
 
-                </ul>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="planosepagamento.html"> Planos e Pagamentos</a></li>
+
+        <li class="dropdown">
+          <a href="#">Cadastros </a>
+          <ul class="submenu">
+            <li><a href="clientes.html">Cadastro de Clientes</a></li>
+            <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+          </ul>
+        </li>
+        <li><a href="agendamentos.html">Agendamentos</a></li>
+        <li><a href="checkin.html">Check-in</a></li>
+
+        <li class="dropdown">
+          <a href="#">Área do Profissional</a>
+          <ul class="submenu">
+            <li><a href="relatorio.html">Relatórios</a></li>
+            <li><a href="avaliacao.html">Avaliação</a></li>
+            <li><a href="prontuario.html">Prontuário</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Administração </a>
+          <ul class="submenu">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li>
+              <a href="cepcadastrados.html">
+                Clientes e Profissionais Cadastrados</a
+              >
             </li>
-        </ul> 
+            <li><a href="mensalidades.html"> Mensalidades e Pagamentos</a></li>
+            <li><a href="config.html"> Configurações </a></li>
+            <li><a href="cfinanceiro.html"> Controle Financeiro </a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
-
 
     <!-- CONTEÚDO -->
     <main>
-        <section class="container">
-            <h1>Agendamento</h1>
+      <section class="container">
+        <h1>Agendamento</h1>
 
-            <form class="form-grid">
-                <div>
-                    <label>Cliente</label>
-                    <input type="text" required>
-                </div>
+        <form class="form-grid">
+          <div>
+            <label for="cliente">Cliente</label>
+            <input type="text" id="cliente" name="cliente" required />
+          </div>
 
-                <div>
-                    <label>Profissional</label>
-                    <select required>
-                        <option>Selecione</option>
-                        <option>Fisioterapeuta 1</option>
-                        <option>Fisioterapeuta 2</option>
-                    </select>
-                </div>
+          <div>
+            <label for="profissional">Profissional</label>
+            <select id="profissional" name="profissional" required>
+              <option value="">Selecione</option>
+              <option value="fisioterapeuta1">Fisioterapeuta 1</option>
+              <option value="fisioterapeuta2">Fisioterapeuta 2</option>
+            </select>
+          </div>
 
-                <div>
-                    <label>Data</label>
-                    <input type="date" required>
-                </div>
+          <div>
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required />
+          </div>
 
-                <div>
-                    <label>Horário</label>
-                    <input type="time" required>
-                </div>
+          <div>
+            <label for="horario">Horário</label>
+            <input type="time" id="horario" name="horario" required />
+          </div>
 
-                <div class="full">
-                    <label>Serviço</label>
-                    <input type="text">
-                </div>
+          <div class="full">
+            <label for="servico">Serviço</label>
+            <input type="text" id="servico" name="servico" />
+          </div>
 
-                <div class="full">
-                    <button type="submit">Agendar</button>
-                </div>
-            </form>
-        </section>
+          <div class="full">
+            <button type="submit">Agendar</button>
+          </div>
+        </form>
+      </section>
+
+      <section>
+        <h2>Minhas Consultas Agendadas</h2>
+        <p>A tabela abaixo exibe todas as consultas relacionadas ao cliente.</p>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Horário</th>
+              <th>Profissional</th>
+              <th>Consulta / Serviço</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20/01/2026</td>
+              <td>08:00</td>
+              <td>João</td>
+              <td>Fisioterapia</td>
+              <td>Realizada</td>
+            </tr>
+            <tr>
+              <td>22/01/2026</td>
+              <td>10:00</td>
+              <td>Fernanda</td>
+              <td>Pilates</td>
+              <td>Realizado</td>
+            </tr>
+            <tr>
+              <td>23/01/2026</td>
+              <td>14:00</td>
+              <td>Carlos</td>
+              <td>Realizado</td>
+              <td>Cancelado</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
-
-</body>
+  </body>
 </html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planos e Pagamento</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+     <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="imagens/logo.png" alt="FISIO+" style="height: 40px" />
+        </a>
+      </div>
+
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="planosepagamento.html"> Planos e Pagamentos</a></li>
+
+        <li class="dropdown">
+          <a href="#">Cadastros </a>
+          <ul class="submenu">
+            <li><a href="clientes.html">Cadastro de Clientes</a></li>
+            <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+          </ul>
+        </li>
+        <li><a href="agendamentos.html">Agendamentos</a></li>
+        <li><a href="checkin.html">Check-in</a></li>
+
+        <li class="dropdown">
+          <a href="#">Área do Profissional</a>
+          <ul class="submenu">
+            <li><a href="relatorio.html">Relatórios</a></li>
+            <li><a href="avaliacao.html">Avaliação</a></li>
+            <li><a href="prontuario.html">Prontuário</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Administração </a>
+          <ul class="submenu">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li>
+              <a href="cepcadastrados.html">
+                Clientes e Profissionais Cadastrados</a
+              >
+            </li>
+            <li><a href="mensalidades.html"> Mensalidades e Pagamentos</a></li>
+            <li><a href="config.html"> Configurações </a></li>
+            <li><a href="cfinanceiro.html"> Controle Financeiro </a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1 style="text-align: center; color: #004d40">Planos Mensais</h1>
+
+      <!-- PLANOS -->
+      <div class="planos-container">
+        <div class="card">
+          <h2>Pilates</h2>
+          <p>4 sessões por mês</p>
+          <p class="valor">R$ 200,00</p>
+          <p>Vencimento: 03/03/2026</p>
+          <a href="#pagamento" class="btn">Selecionar</a>
+        </div>
+
+        <div class="card">
+          <h2>Geriatria</h2>
+          <p>8 sessões por mês</p>
+          <p class="valor">R$ 400,00</p>
+          <p>Vencimento: 03/03/2026</p>
+          <a href="#pagamento" class="btn">Selecionar</a>
+        </div>
+
+        <div class="card">
+          <h2>Traumatologia</h2>
+          <p>10 sessões por mês</p>
+          <p class="valor">R$ 600,00</p>
+          <p>Vencimento: 03/03/2026</p>
+          <a href="#pagamento" class="btn">Selecionar</a>
+        </div>
+      </div>
+
+      <!-- PAGAMENTO (MESMA PÁGINA) -->
+      <div id="pagamento" class="pagamento-container">
+        <h2 style="color: #004d40">Pagamento do Plano</h2>
+
+        <form>
+          <label>Nome do Cliente</label><br />
+          <input type="text" required /><br /><br />
+
+          <label>Plano</label><br />
+          <select required>
+            <option>Pilates - R$ 200,00</option>
+            <option>Geriatria - R$ 400,00</option>
+            <option>Traumatologia - R$ 600,00</option></select
+          ><br /><br />
+
+          <label>Forma de pagamento</label><br />
+          <select required>
+            <option>Pix</option>
+            <option>Cartão</option>
+            <option>Dinheiro</option></select
+          ><br /><br />
+
+          <label>Data do pagamento</label><br />
+          <input type="date" required /><br /><br />
+
+          <button class="btn">Confirmar Pagamento</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
