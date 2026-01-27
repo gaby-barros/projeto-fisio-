@@ -13,7 +13,15 @@ img {
 body {
   font-family: Arial, sans-serif;
   background-color: #f9fdfb;
+
 }
+
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 24px; /* dá mais respiro entre título e conteúdo */
+}
+
  /* FERNANDA    /*
 /* ================= INTRO ================= */
 #welcome-screen {
@@ -116,7 +124,6 @@ nav {
 .submenu {
   display: none;
   position: absolute;
-  position: relative;
   top: 100%;
   left: 0;
   background: #e8f5e9;
@@ -139,7 +146,7 @@ nav {
 /* ================= TABELAS ESTILO GOOGLE FORMS ================= */
 table {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 30px auto;
   border-collapse: collapse;
   background-color: #fff;
@@ -324,97 +331,107 @@ input[type="button"]:active {
 }
 
 /* EMILY  /*
-/* ================= FORMULÁRIOS (ESTILO GOOGLE + CENTRALIZAÇÃO TOTAL) ================= */
+/* ================= FORMULÁRIOS (VERTICAL E CENTRALIZADO) ================= */
 
-/* O 'main' agora controla o alinhamento de tudo: título, form e botões */
 main {
-  display: flex !important;
+  display: flex;
   flex-direction: column !important;
-  align-items: center !important;
+  align-items: center !important; /* Centraliza o form na tela */
   justify-content: flex-start !important;
   padding: 40px 16px !important;
   width: 100% !important;
 }
 
-/* Títulos principais */
-main h1,
-main h2 {
-  text-align: center !important;
-  width: 100% !important;
-  margin-bottom: 25px !important;
-  color: #004d40 !important;
-}
-
-/* Formulário */
 main form {
-  width: 100% !important;
-  max-width: 480px !important;
-  padding: 32px !important;
+  width: 90em !important;
+   /* Tamanho ideal para não ficar fino nem largo demais */
+  padding: 40px !important;
   background: #fff !important;
   border-radius: 12px !important;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08) !important;
   border: 1px solid #dadce0 !important;
-  margin: 80px 0 30px 0 !important;
+  margin: 40px auto !important;
+  
+  /* Garante a disposição vertical */
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-/* Remove bordas de fieldset */
-main form fieldset {
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 0 20px 0 !important;
+/* Isso faz com que TODOS os inputs e labels ocupem a largura total do form */
+main form div,
+main form label,
+main form input,
+main form select,
+main form textarea,
+main form button {
+  width: 100% !important; 
+  display: block !important;
 }
 
-/* ===== AJUSTE DOS TÍTULOS DOS CAMPOS ===== */
-
-/* Labels (títulos dos campos) */
 main form label {
-  display: block !important;
-  margin-bottom: 6px !important;
-  font-size: 14px;
-  font-weight: 500;
-  color: #555;
-}
-
-/* Caso use legend ou texto solto */
-main form legend {
-  display: block !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 8px !important;
   font-weight: 600;
-  color: #444;
+  color: #004d40;
 }
 
-/* Inputs estilo Google Forms */
-main input[type="text"],
-main input[type="email"],
-main input[type="tel"],
-main input[type="date"],
-main select,
-main textarea {
-  width: 100% !important;
-  padding: 12px 0 !important;
-  margin-bottom: 22px !important; /* espaço entre os campos */
+main input, main select {
+  margin-bottom: 25px !important; /* Espaço entre um campo e outro */
+  padding: 12px 10px !important;
   border: none !important;
-  border-bottom: 1px solid #dadce0 !important;
-  border-radius: 0 !important;
-  background-color: transparent !important;
+  border-bottom: 2px solid #dadce0 !important; /* Linha mais visível */
+  font-size: 16px;
 }
 
-/* Botão Salvar */
-main form input[type="submit"],
-main form button[type="submit"] {
-  width: 100% !important;
-  background-color: #50c975 !important;
-  margin-top: 10px !important;
+/* Botão ocupando a largura total do quadro */
+main form button[type="submit"],
+main form input[type="submit"] {
+  margin-top: 20px !important;
+  padding: 15px !important;
+  font-size: 16px !important;
+  
 }
 
-/* Botão fora do formulário */
-main > button,
-main > a.btn {
-  display: inline-block !important;
-  margin: 0 auto !important;
-  text-align: center !important;
+/* ================= TÍTULOS DO FORM MAIS ORGANIZADOS ================= */
+
+/* Título principal do formulário */
+main h1 {
+  margin-bottom: 40px !important;
+  text-align: center;
+  color: #004d40;
+  font-size: 28px;
 }
-/* GABY   /*
+
+/* Subtítulos (ex: h2 dentro do form) */
+main form h2 {
+  margin-top: 30px !important;
+  margin-bottom: 20px !important;
+  font-size: 20px;
+  color: #00695c;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+/* Caso use legend (fieldset) */
+main form legend {
+  margin-bottom: 20px !important;
+  font-size: 18px;
+  font-weight: 600;
+  color: #004d40;
+}
+
+/* Espaço extra entre blocos do formulário */
+main form fieldset {
+  margin-bottom: 35px !important;
+}
+
+/* 5. Ajuste Responsivo: No celular, volta tudo para uma coluna só */
+@media (max-width: 600px) {
+  main form > div {
+    flex: 1 1 100%;
+  }
+}
+
+
 /* ================= FOOTER ================= */
 footer {
   background: #004d40;
@@ -424,113 +441,20 @@ footer {
   line-height: 1.6;
 }
 
-/* ================= RESPONSIVIDADE GLOBAL ================= */
-
-/* Evita rolagem lateral */
-body {
-  overflow-x: hidden;
-}
-
-/* ---------- TABLET E MOBILE ---------- */
+/* ================= RESPONSIVO ================= */
 @media (max-width: 768px) {
-
-  /* NAVBAR */
   .navbar {
     flex-direction: column;
-    padding: 15px;
-    gap: 10px;
+    text-align: center;
   }
-
-  nav {
-    width: 100%;
-  }
-
   .menu {
     flex-direction: column;
     width: 100%;
-    gap: 0;
+    margin-top: 15px;
   }
-
-  .menu li {
-    width: 100%;
-  }
-
-  .menu a {
-    width: 100%;
-    padding: 14px;
-    text-align: center;
-  }
-
-  /* FORMULÁRIOS */
-  main {
-    padding: 24px 12px !important;
-  }
-
-  main form {
-    max-width: 100% !important;
-    margin: 40px auto 20px auto !important;
-    padding: 24px 20px !important;
-  }
-
-  /* TÍTULOS */
-  h1 {
-    font-size: 22px !important;
-  }
-
-  h2 {
-    font-size: 18px !important;
-  }
-
-  /* CARDS */
-  .cards,
-  .grid,
-  .planos-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  /* TABELAS */
   table {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
-    font-size: 13px;
-  }
-
-  th,
-  td {
-    padding: 12px 14px;
-  }
-
-  /* IMAGENS */
-  .imagem-site {
-    max-width: 100%;
-  }
-}
-
-/* ---------- CELULARES PEQUENOS ---------- */
-@media (max-width: 480px) {
-
-  .navbar .logo img {
-    height: 55px;
-  }
-
-  .menu a {
-    font-size: 13px;
-  }
-
-  form label {
-    font-size: 13px;
-  }
-
-  input,
-  select,
-  textarea {
-    font-size: 14px;
   }
 }

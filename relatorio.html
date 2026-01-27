@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -42,11 +42,7 @@
           <a href="#">Administração </a>
           <ul class="submenu">
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li>
-              <a href="cepcadastrados.html">
-                Clientes e Profissionais Cadastrados</a
-              >
-            </li>
+            <li><a href="cepcadastrados.html">Clientes e Profissionais Cadastrados</a></li>
             <li><a href="mensalidades.html"> Mensalidades e Pagamentos</a></li>
             <li><a href="config.html"> Configurações </a></li>
             <li><a href="cfinanceiro.html"> Controle Financeiro </a></li>
@@ -55,53 +51,40 @@
       </ul>
     </nav>
 
-
     <main>
       <h1>Relatórios de Atendimentos</h1>
 
-      <!-- FORMULÁRIO DE FILTRO -->
-      <section>
+      <section class="filtro-container">
         <h2>Filtrar Relatório</h2>
 
-        <form>
-          <label>Cliente:</label><br />
-          <input
-            type="text"
-            name="cliente"
-            placeholder="Nome do cliente"
-          /><br /><br />
+        <form action="#" method="GET">
+          <label for="cliente">Cliente:</label>
+          <input type="text" id="cliente" name="cliente" placeholder="Nome do cliente" />
 
-          <label>Profissional:</label><br />
-          <input
-            type="text"
-            name="profissional"
-            placeholder="Nome do profissional"
-          /><br /><br />
+          <label for="profissional">Profissional:</label>
+          <input type="text" id="profissional" name="profissional" placeholder="Nome do profissional" />
 
-          <label>Status:</label><br />
-          <select name="status">
+          <label for="status">Status:</label>
+          <select id="status" name="status">
             <option value="">Todos</option>
             <option value="pendente">Pendente</option>
             <option value="realizado">Realizado</option>
-            <option value="cancelado">Cancelado</option></select
-          ><br /><br />
+            <option value="cancelado">Cancelado</option>
+          </select>
 
-          <label>Data Inicial:</label><br />
-          <input type="date" name="data_inicio" /><br /><br />
+          <label for="data_inicio">Data Inicial:</label>
+          <input type="date" id="data_inicio" name="data_inicio" />
 
-          <label>Data Final:</label><br />
-          <input type="date" name="data_fim" /><br /><br />
+          <label for="data_final">Data Final:</label>
+          <input type="date" id="data_final" name="data_final" />
 
           <button type="submit">Gerar Relatório</button>
         </form>
       </section>
 
-
-      <!-- RESULTADO DO RELATÓRIO -->
-      <section>
+      <section class="tabela-container">
         <h2>Resultado do Relatório</h2>
-
-        <table border="1">
+        <table>
           <thead>
             <tr>
               <th>Cliente</th>
@@ -112,7 +95,6 @@
               <th>Status</th>
             </tr>
           </thead>
-
           <tbody>
             <tr>
               <td>Maria Silva</td>
@@ -122,7 +104,6 @@
               <td>Pilates</td>
               <td>Pendente</td>
             </tr>
-
             <tr>
               <td>João Pereira</td>
               <td>03/03/2026</td>
@@ -131,9 +112,8 @@
               <td>Traumatologia</td>
               <td>Realizado</td>
             </tr>
-
             <tr>
-              <td>jonas ferreira</td>
+              <td>Jonas Ferreira</td>
               <td>03/03/2026</td>
               <td>14:00</td>
               <td>Carlos</td>
@@ -143,9 +123,6 @@
           </tbody>
         </table>
       </section>
-
-    
-    </form>
     </main>
   </body>
 </html>

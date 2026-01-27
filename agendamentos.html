@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- MENU -->
     <nav class="navbar">
       <div class="logo">
         <a href="index.html">
@@ -42,11 +41,7 @@
           <a href="#">Administração </a>
           <ul class="submenu">
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li>
-              <a href="cepcadastrados.html">
-                Clientes e Profissionais Cadastrados</a
-              >
-            </li>
+            <li><a href="cepcadastrados.html">Clientes e Profissionais Cadastrados</a></li>
             <li><a href="mensalidades.html"> Mensalidades e Pagamentos</a></li>
             <li><a href="config.html"> Configurações </a></li>
             <li><a href="cfinanceiro.html"> Controle Financeiro </a></li>
@@ -55,15 +50,14 @@
       </ul>
     </nav>
 
-    <!-- CONTEÚDO -->
     <main>
       <section class="container">
         <h1>Agendamento</h1>
 
-        <form class="form-grid">
+        <form>
           <div>
             <label for="cliente">Cliente</label>
-            <input type="text" id="cliente" name="cliente" required />
+            <input type="text" id="cliente" name="cliente" placeholder="Nome do cliente" required />
           </div>
 
           <div>
@@ -85,14 +79,12 @@
             <input type="time" id="horario" name="horario" required />
           </div>
 
-          <div class="full">
+          <div>
             <label for="servico">Serviço</label>
-            <input type="text" id="servico" name="servico" />
+            <input type="text" id="servico" name="servico" placeholder="Tipo de serviço" />
           </div>
 
-          <div class="full">
-            <button type="submit">Agendar</button>
-          </div>
+          <button type="submit">Agendar</button>
         </form>
       </section>
 
@@ -100,7 +92,7 @@
         <h2>Minhas Consultas Agendadas</h2>
         <p>A tabela abaixo exibe todas as consultas relacionadas ao cliente.</p>
 
-        <table border="1">
+        <table>
           <thead>
             <tr>
               <th>Data</th>
