@@ -8,7 +8,9 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
-
+        /* =======================================================
+   NAVBAR / MENU (VISUAL ORIGINAL + CORREÇÃO)
+   ======================================================= */
 .navbar {
     background-color: #aee9c9;
     padding: 10px 20px;
@@ -49,6 +51,7 @@
     color: #fff;
 }
 
+/* SUBMENU (CORRIGIDO SEM QUEBRAR HOME) */
 .submenu {
     display: none;
     position: absolute;
@@ -76,27 +79,6 @@
     display: block;
 }
 
-
-button {
-    background-color: rgb(0, 96, 69);
-    color: white;
-    border-width: 1px;
-}
-
-.page-title img {
-    height: 30px;   
-    width: auto;
-    vertical-align: middle;
-    margin-right: 2px;
-}
-
-.profile-section img {
-    height: 30px;   
-    width: auto;
-    vertical-align: middle;
-    margin-right: 2px;
-}
-
 .profile img {
     width: auto;
     height: 150px;
@@ -107,168 +89,54 @@ button {
     align-items:flex-start;
     gap: 10px;
 }
-
-.profile {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;   
+.profile-pic button {
+    background-color: #004d40;
+    color: white;
+    border-width: 1px;
 }
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.notifications-section img {
-    height: 30px;   
-    width: auto;
-    vertical-align: middle;
-    margin-right: 5px;
-}
-
-.notifications {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.account-security-section img {
-    height: 30px;   
-    width: auto;
-    vertical-align: middle;
-    margin-right: 2px;
-}
-
-.account-security {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-
-
     </style>
 </head>
 <body>
-     <nav class="navbar">
-      <div class="logo">
-        <a href="index.html">
-          <img src="imagens/logo.png" alt="FISIO+" style="height: 40px" />
-        </a>
-      </div>
-
-      <ul class="menu">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="planosepagamento.html"> Planos e Pagamentos</a></li>
-
-        <li class="dropdown">
-          <a href="#">Cadastros </a>
-          <ul class="submenu">
-            <li><a href="clientes.html">Cadastro de Clientes</a></li>
-            <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
-          </ul>
-        </li>
-        <li><a href="agendamentos.html">Agendamentos</a></li>
-        <li><a href="checkin.html">Check-in</a></li>
-
-        <li class="dropdown">
-          <a href="#">Área do Profissional</a>
-          <ul class="submenu">
-            <li><a href="relatorio.html">Relatórios</a></li>
-            <li><a href="avaliacao.html">Avaliação</a></li>
-            <li><a href="prontuario.html">Prontuário</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#">Administração </a>
-          <ul class="submenu">
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li>
-              <a href="cepcadastrados.html">
-                Clientes e Profissionais Cadastrados</a
-              >
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagens/logo.png">
+            </a>
+        </div>
+        
+        <ul class="menu">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li class="dropdown"></li>
+                <a href="#">Cadastros</a>
+                <ul class="submenu">
+                    <li><a href="clientes.html">Cadastro de Clientes</a></li>
+                    <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+                </ul>
             </li>
-            <li><a href="mensalidades.html"> Mensalidades e Pagamentos</a></li>
-            <li><a href="config.html"> Configurações </a></li>
-            <li><a href="cfinanceiro.html"> Controle Financeiro </a></li>
-          </ul>
-        </li>
-      </ul>
+            <li><a href="agendamentos.html">Agendamentos</a></li>
+            <li><a href="checkin.html">Check-in</a></li>
+            <li><a href="areadoprofissional.html">Área do Profissional</a></li>
+             <li class="dropdown">
+                <a href="#">Administração ▼</a>
+                <ul class="submenu">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="cepcadastrados"> Clientes e Profissionais Cadastrados</a></li>
+
+                </ul>
+            </li>
+        </ul> 
     </nav>
-
-
-    <h2 class="page-title">
-        <img src="imagens/settings.png">
-        Configurações do site
-    </h2>
-    
-    <h4 class="profile-section">
-        <img src="/imagens/profile.png">
-        Perfil
-    </h4>
+    <h2>Configurações do site</h2>
     <div class="profile">
+        <h4>Perfil</h4>
         <div class="profile-pic">
             <img src="/imagens/user.png">
             <button onclick="alert('Como esse é um site estático, não é possível alterar a foto.')">Alterar foto</button>
         </div>
         <div class="profile-info">
-            <div class="profile-name">
-                <label for="name">Nome</label>
-                <input type="text" class="name" value="Alisson Ferreira Sá e Silva">
-                <button type="submit" onclick="alert('Como esse é um site estático, não é possível alterar o nome.')">Alterar Nome</button>
-            </div>
-            <div class="profile-email">
-                <label for="e-mail">E-Mail</label>
-                <input type="email" class="e-mail" value="alissonferreira@outlook.com">
-                <button type="submit" onclick="alert('Como esse é um site estático, não é possível alterar o E-Mail.')">Alterar E-Mail</button>
-            </div>
-            <div class="profile-CPF">
-                <label for="CPF">CPF</label>
-                <input type="text" class="CPF" value="774.902.694-07">
-                <button type="submit" onclick="alert('Como esse é um site estático, não é possível alterar o CPF.')">Alterar CPF</button>
-            </div>
-            <div class="profile-telephone">
-                <label for="telephone">Número de Telefone</label>
-                <input type="number" class="telephone" value="87979113461">
-                <button type="submit" onclick="alert('Como esse é um site estático, não é possível alterar o número de telefone.')">Alterar Número de Telefone</button>
-            </div>
+            
         </div>
-    </div>
-
-    <h4 class="notifications-section">
-        <img src="/imagens/notification.png">
-        Notificações
-    </h4>
-    <div class="notifications">
-        <div class="email-notification">
-            <input type="radio" class="yes-email" name="email-pref" value="yes">
-            <label for="yes-email">Eu quero receber notificações por E-Mail</label>
-            <input type="radio" class="no-email" name="email-pref" value="no">
-            <label for="yes-email">Não quero receber notificações por E-Mail</label>
-        </div>
-        <div class="telephone-notification">
-            <input type="radio" class="yes-telephone" name="telephone-pref" value="yes">
-            <label for="yes-telephone">Eu quero receber notificações por SMS</label>
-            <input type="radio" class="no-telephone" name="telephone-pref" value="no">
-            <label for="no-telephone">Não quero receber notificações por SMS</label>
-        </div>
-    </div>
-
-    <h4 class="account-security-section">
-        <img src="imagens/security.png">
-        Segurança da Conta
-    </h4>
-    <div class="account-security">
-        <div class="acccount-password">
-            <label for="password">Senha</label>
-            <input type="password" class="password" value="ALS@97">
-            <button type="submit" onclick="alert('Como esse é um site estático, não é possível alterar a senha.')">Alterar senha</button>
-        </div>
-        <button type="submit" onclick="alert('A partir das próximas 24h, você irá receber uma notificação de confirmação no seu meio de comunicação configurado.')">Excluir conta</button>
     </div>
 
 </body>
