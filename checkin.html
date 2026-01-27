@@ -4,76 +4,181 @@
   <meta charset="UTF-8">
   <title>Check-in</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    form {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+
+    form button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background: #eee;
+    }
+
+    .pendente {
+      color: orange;
+      font-weight: bold;
+    }
+
+    .feito {
+      color: green;
+      font-weight: bold;
+    }
+
+    .editar {
+      background: #2196F3;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
-   <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="imagens/logo.png">
-            </a>
-        </div>
-        
-        <ul class="menu">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li class="dropdown">
-                <a href="#">Cadastros</a>
-                <ul class="submenu">
-                    <li><a href="clientes.html">Cadastro de Clientes</a></li>
-                    <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
-                </ul>
-            </li>
-            <li><a href="agendamentos.html">Agendamentos</a></li>
-            <li><a href="checkin.html">Check-in</a></li>
-            <li><a href="areadoprofissional.html">Área do Profissional</a></li>
-             <li class="dropdown">
-                <a href="#">Administração </a>
-                <ul class="submenu">
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="cepcadastrados.html"> Clientes Cadastrados</a></li>
-                </ul>
-            </li>
-        </ul> 
-    </nav>
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="imagens/logo.png">
+    </a>
+  </div>
 
+  <ul class="menu">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li class="dropdown">
+      <a href="#">Cadastros</a>
+      <ul class="submenu">
+        <li><a href="clientes.html">Cadastro de Clientes</a></li>
+        <li><a href="profissionais.html">Cadastro de Profissionais</a></li>
+      </ul>
+    </li>
+    <li><a href="agendamentos.html">Agendamentos</a></li>
+    <li><a href="checkin.html">Check-in</a></li>
+    <li><a href="areadoprofissional.html">Área do Profissional</a></li>
+  </ul>
+</nav>
 
 <main>
-    <section class="container">
-        <h1>Check-in do Dia</h1>
+  <section class="container">
+    <h1>Check-in do Dia</h1>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Cliente</th>
-                    <th>Horário</th>
-                    <th>Profissional</th>
-                    <th>Status</th>
-                    <th>Ação</th>
-                </tr>
-            </thead>
+    <!-- FORMULÁRIO -->
+    <form id="formCheckin">
+      <label>Nome do Cliente</label>
+      <input type="text" id="cliente" required>
 
-            <tbody>
-                <tr>
-                    <td>Maria Silva</td>
-                    <td>08:00</td>
-                    <td>João</td>
-                    <td class="pendente">Pendente</td>
-                    <td><button class="checkin-btn">Check-in</button></td>
-                </tr>
+      <label>Horário</label>
+      <input type="time" id="horario" required>
 
-                <tr>
-                    <td>Ana Souza</td>
-                    <td>09:00</td>
-                    <td>Carlos</td>
-                    <td class="feito">Realizado</td>
-                    <td>-</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+      <label>Profissional</label>
+      <input type="text" id="profissional" required>
+
+      <button type="submit">Confirmar Check-in</button>
+    </form>
+
+    <!-- TABELA -->
+    <table>
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Horário</th>
+          <th>Profissional</th>
+          <th>Status</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+
+      <tbody id="tabelaCheckin"></tbody>
+    </table>
+  </section>
 </main>
+
+<script>
+  const form = document.getElementById("formCheckin");
+  const tabela = document.getElementById("tabelaCheckin");
+  let linhaEditando = null;
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const cliente = document.getElementById("cliente").value;
+    const horario = document.getElementById("horario").value;
+    const profissional = document.getElementById("profissional").value;
+
+    if (linhaEditando) {
+      linhaEditando.children[0].innerText = cliente;
+      linhaEditando.children[1].innerText = horario;
+      linhaEditando.children[2].innerText = profissional;
+      linhaEditando = null;
+    } else {
+      const linha = tabela.insertRow();
+
+      linha.insertCell(0).innerText = cliente;
+      linha.insertCell(1).innerText = horario;
+      linha.insertCell(2).innerText = profissional;
+      linha.insertCell(3).innerHTML = "<span class='pendente'>Pendente</span>";
+
+      const acao = linha.insertCell(4);
+      const btnEditar = document.createElement("button");
+      btnEditar.innerText = "Editar";
+      btnEditar.classList.add("editar");
+
+      btnEditar.onclick = function() {
+        document.getElementById("cliente").value = linha.children[0].innerText;
+        document.getElementById("horario").value = linha.children[1].innerText;
+        document.getElementById("profissional").value = linha.children[2].innerText;
+        linhaEditando = linha;
+      };
+
+      acao.appendChild(btnEditar);
+    }
+
+    form.reset();
+  });
+</script>
 
 </body>
 </html>
+
