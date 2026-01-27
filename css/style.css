@@ -424,3 +424,113 @@ footer {
   line-height: 1.6;
 }
 
+/* ================= RESPONSIVIDADE GLOBAL ================= */
+
+/* Evita rolagem lateral */
+body {
+  overflow-x: hidden;
+}
+
+/* ---------- TABLET E MOBILE ---------- */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu a {
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+  }
+
+  /* FORMULÁRIOS */
+  main {
+    padding: 24px 12px !important;
+  }
+
+  main form {
+    max-width: 100% !important;
+    margin: 40px auto 20px auto !important;
+    padding: 24px 20px !important;
+  }
+
+  /* TÍTULOS */
+  h1 {
+    font-size: 22px !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+  /* CARDS */
+  .cards,
+  .grid,
+  .planos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* TABELAS */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 12px 14px;
+  }
+
+  /* IMAGENS */
+  .imagem-site {
+    max-width: 100%;
+  }
+}
+
+/* ---------- CELULARES PEQUENOS ---------- */
+@media (max-width: 480px) {
+
+  .navbar .logo img {
+    height: 55px;
+  }
+
+  .menu a {
+    font-size: 13px;
+  }
+
+  form label {
+    font-size: 13px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 14px;
+  }
+}
