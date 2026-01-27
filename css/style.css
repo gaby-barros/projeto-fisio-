@@ -335,11 +335,11 @@ input[type="button"]:active {
 
 main {
   display: flex;
-  flex-direction: column !important;
-  align-items: center !important; /* Centraliza o form na tela */
-  justify-content: flex-start !important;
-  padding: 40px 16px !important;
-  width: 100% !important;
+  flex-direction: column;
+  align-items: center; /* Centraliza o form na tela */
+  justify-content: flex-start;
+  padding: 40px 16px;
+  width: 100%;
 }
 
 main form {
